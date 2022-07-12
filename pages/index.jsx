@@ -2,7 +2,6 @@ import React from 'react';
 import { CodeIcon } from '@heroicons/react/outline';
 
 import Requirements from '../components/Requirements';
-import About from '../components/About';
 
 const Index = () => {
 

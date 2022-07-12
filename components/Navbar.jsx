@@ -8,7 +8,7 @@ const Navbar = () => {
                     <img
                         src='/official-logo.png'
                         alt='logo'
-                        width='100'
+                        width='80'
                     />
                     <p className='ml-2 italic'>
                         tbc
