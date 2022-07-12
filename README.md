@@ -13,6 +13,7 @@ Navigate to a folder in your local environment and copy/paste the following comm
 ```
   git clone git@github.com:nathanzebedee/solana-development.git
   cd solana-development
+  nvm install 16
   nvm use 16
   yarn
   yarn dev
