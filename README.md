@@ -1,23 +1,20 @@
-# Next.js + Tailwind CSS Example
+# A Solana Development Track by The Blockchain Collaborative at Baylor University
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This repository is designed to help beginner web3 programmers find their legs developing on the Solana network. This track is specifically designed for front-end development, with a lot of emphasis on 
 
-## Deploy your own
+- Next.js
+- Tailwind.CSS
+- solana/web3.js
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+<img width="1259" alt="Screen Shot 2022-07-12 at 8 11 55 AM" src="https://user-images.githubusercontent.com/85138723/178497911-a410bb1d-b190-42be-8778-2f2dfccad21e.png">
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-# or
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
+# Getting Started
+Navigate to a folder in your local environment and copy/paste the following commands into your terminal:
 ```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+  git clone git@github.com:nathanzebedee/solana-development.git
+  cd solana-development
+  nvm use 16
+  yarn
+  yarn dev
+```
+At this point, the repository should be installed to your computer and hosted on your browser at http://localhost:3000.
