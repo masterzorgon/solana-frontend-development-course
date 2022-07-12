@@ -9,7 +9,7 @@ This repository is designed to help beginner web3 programmers find their legs de
 # Getting Started
 Navigate to a folder in your local environment and copy/paste the following commands into your terminal:
 ```
-  git clone ...
+  git clone git@github.com:nathanzebedee/solana-development.git
   cd solana-development
   nvm use 16
   yarn
