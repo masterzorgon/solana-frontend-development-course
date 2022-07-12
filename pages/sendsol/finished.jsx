@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import * as web3 from '@solana/web3.js';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
- import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
-import Navbar from '../../components/NavBar';
+ import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Finished = () => {
 

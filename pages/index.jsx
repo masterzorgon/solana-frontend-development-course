@@ -1,5 +1,5 @@
 import React from 'react';
-import { CodeIcon } from '@heroicons/react/outline';
+import { CodeIcon, BeakerIcon } from '@heroicons/react/outline';
 
 import Requirements from '../components/Requirements';
 
@@ -8,23 +8,25 @@ const Index = () => {
     const [displayRequirements, setDisplayRequirements] = React.useState(false);
 
     const projects = [
-    {
-            id: '01',
-            title: 'keypair',
-            description: 'You will create a public/private keypair, and fund the account using solana/web3.js.',
-            href: {
-                finished: '/keypair/finished',
-                starter: '/keypair/starter',
-            },
-        },
         {
-            id: '02',
+            id: '01',
+            season: 'season-one',
             title: 'sendsol',
             description: 'You will create an application that allows you to send SOL to another wallet on the Solana devnet.',
             href: {
                 finished: '/sendsol/finished',
                 starter: '/sendsol/starter',
-            },
+            }
+        },
+        {
+            id: '02',
+            season: 'season-one',
+            title: 'serialize',
+            description: '',
+            href: {
+                finished: '/serialize/finished',
+                starter: '/serialize/starter',
+            }
         },
     ];
 
@@ -48,24 +50,24 @@ const Index = () => {
                         <p className="text-lg">
                             We are a student organization at Baylor University, dedicated to advancing and
                             enriching the blockchain community through research, education, and engineering.
-                            If you have any questions about this project, please contact <a href='mailto:nathan_galindo1@baylor.edu' target='_blank' rel='noreferrer' className="text-[#eb54bc] hover:text-[#80ebff]">Nathan Galindo</a>.
+                            If you have any questions about this project, please contact <a href='mailto:nathan_galindo1@baylor.edu' target='_blank' rel='noreferrer' className="text-[#eb54bc] hover:text-[#80ebff]">Nathan Galindo</a>, or <a href="https://github.com/nathanzebedee/solana-development" target='_blank' rel='noreferrer' className="text-[#eb54bc] hover:text-[#80ebff]">visit the repository</a>.
                         </p>
                     </div>
                 </div>
                 {projects.map(project => (
                     <div key={project.id} className='rounded-lg h-60 p-5 bg-[#2a302f] col-span-1  flex flex-col justify-between'>
                         <div className='flex justify-between text-xl'>
-                            <h2 className='text-[#fa6ece] font-extrabold'>
-                                {project.id}
-                            </h2>
-                            <h2 className='font-light italic tracking-wide'>
-                                {project.title}
-                            </h2>
+                            <div>
+                                <BeakerIcon />
+                                <h2 className='text-[#fa6ece] font-extrabold'>{project.id}</h2>
+                            </div>
+                            <div>
+                                <h2 className='font-light italic tracking-wide'>{project.title}</h2>
+                                <p className='text-xs text-[#80ebff]'>{project.season}</p>
+                            </div>
                         </div>
-                        <div className='mt-8'>
-                            <p>
-                                {project.description}
-                            </p>
+                        <div >
+                            <p>{project.description}</p>
                         </div>
                         <div className='mt-8 font-semibold flex justify-between'>
                             <div>
