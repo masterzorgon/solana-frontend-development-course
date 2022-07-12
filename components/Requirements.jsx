@@ -57,10 +57,10 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative bg-zinc-100 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full sm:p-6">
+                            <Dialog.Panel className="relative bg-zinc-200 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full sm:p-6">
                                 <div>
-                                    <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 border-2 border-green-600">
-                                        <CodeIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
+                                    <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-[#d9cefc] border-2 border-[#9e80ff]">
+                                        <CodeIcon className="h-6 w-6 text-[#9e80ff]" aria-hidden="true" />
                                     </div>
                                     <div className="mt-3 text-center sm:mt-5">
                                         <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
@@ -92,7 +92,7 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
                                 <div className="mt-5 sm:mt-6">
                                     <button
                                         type="button"
-                                        className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-black text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                                        className="inline-flex justify-center w-full rounded-md border-2 border-black shadow-sm px-4 py-2 bg-black hover:bg-transparent hover:text-black text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
                                         onClick={() => setDisplayRequirements(false)}
                                     >
                                         Go back to dashboard
