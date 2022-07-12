@@ -15,4 +15,4 @@ Navigate to a folder in your local environment and copy/paste the following comm
   yarn
   yarn dev
 ```
-At this point, the repository should be installed and hosted on your browser at http://localhost:3000.
+At this point, the repository should be installed to your computer and hosted on your browser at http://localhost:3000.
