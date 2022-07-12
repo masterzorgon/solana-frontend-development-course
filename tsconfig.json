@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/ping.js", "pages/index.jsx", "pages/api/index.js", "pages/sendsol/sendsol.jsx"],
   "exclude": ["node_modules"]
 }
