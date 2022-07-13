@@ -23,4 +23,4 @@ At this point, the repository should be installed to your computer and hosted on
 # Workflow
 For each project, there is a card which contians a brief description of the project, as well as two buttons: "preview" and "starter". 
 * The "preview" button, when clicked, will direct you to a finished version of the project. This is for your reference as you build the project on your own. 
-* The "starter" button, when clicked, will take you to a blank page. The pages labeled "starter.jsx" within your repository are blank files that you will use to build out your own programs.
+* The "starter" button, when clicked, will take you to a blank page. The pages labeled "starter.jsx" within your repository are blank files that you will use to build out your own version of the given project.
