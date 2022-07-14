@@ -28,6 +28,11 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
             title: 'Yarn',
             url: 'https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable',
             description: 'A package manager for JavaScript...'
+        },
+        {
+            title: 'Git',
+            url: 'https://git-scm.com/',
+            description: 'A version control system...'
         }
     ];
 
@@ -76,7 +81,7 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
                                                             rel='noreferrer'
                                                             target='_blank'
                                                             key={requirement.title}
-                                                            className='font-bold hover:text-[#fa6ece]'
+                                                            className='font-bold hover:text-[#fa6ece] transition-all duration-200'
                                                         >
                                                             {requirement.title}
                                                         </a>
@@ -92,7 +97,7 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
                                 <div className="mt-5 sm:mt-6">
                                     <button
                                         type="button"
-                                        className="inline-flex justify-center w-full rounded-md border-2 border-black shadow-sm px-4 py-2 bg-black hover:bg-transparent hover:text-black text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                                        className="inline-flex justify-center w-full rounded-md border-2 border-black shadow-sm px-4 py-2 bg-black hover:bg-transparent hover:text-black text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm transition-all duration-200"
                                         onClick={() => setDisplayRequirements(false)}
                                     >
                                         Go back to dashboard

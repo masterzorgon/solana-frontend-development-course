@@ -1,8 +1,12 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import WalletContextProvider from '../contexts/WalletContextProvider';
- import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Navbar from '../components/Navbar';
+
+import WalletContextProvider from '../contexts/WalletContextProvider';
+import TransitionContextProvider from '../contexts/TransitionContextProvider';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,7 +14,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <WalletContextProvider>
         <Navbar />
         <ToastContainer />
-        <Component {...pageProps} />
+        <TransitionContextProvider>
+          <Component {...pageProps} />
+        </TransitionContextProvider>
       </WalletContextProvider>
     </>
   );

@@ -1,11 +1,14 @@
 
+
 const Starter = () => {
     return (
         <main className="bg-[#161b19] min-h-screen text-white">
             <div className="w-full h-screen flex justify-center items-center">
                 <div className="flex flex-col text-center">
-                    <h1 className="text-4xl italic">your turn to build!</h1>
-                    <a href='/' className="text-[#fa6ece] hover:text-white">go back...</a>
+                    <h1 className="text-4xl italic">
+                        your turn to build!
+                    </h1>
+                    <a href='/' className="mt-2 text-[#fa6ece] hover:text-white">go back...</a>
                 </div>
             </div>
         </main>

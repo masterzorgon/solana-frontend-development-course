@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import * as web3 from '@solana/web3.js';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
  import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const Finished = () => {
 
@@ -52,10 +51,8 @@ const Finished = () => {
         getInfo();
     }, [connection, publicKey]);
 
-
-
     return (
-        <main className='bg-[#161b19] min-h-screen text-white'>
+        <main className='min-h-screen text-white'>
             <section className='grid grid-cols-1 sm:grid-cols-3 gap-4 p-4'>
                 <div className='rounded-lg h-40 p-4 bg-[#2a302f] col-span-1'>
                     <h2 className='font-semibold mb-2'>
