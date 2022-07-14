@@ -11,6 +11,11 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
             description: 'A Solana wallet browser extension...'
         },
         {
+            title: 'SOL',
+            url: 'https://solfaucet.com/',
+            description: 'Cryptocurrency native to the Solana blockchain...'
+        },
+        {
             title: 'Node Version Manager',
             url: 'https://github.com/nvm-sh/nvm',
             description: 'A CLI tool that lets you manage multiple versions of Node.js...'
