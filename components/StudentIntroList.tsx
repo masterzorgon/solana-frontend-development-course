@@ -17,7 +17,7 @@ export const StudentIntroList: FC = () => {
             search,
             search !== ''
         ).then(setStudentIntros)
-    }, [page, search])
+    }, [page, search]);
     
     return (
         <div>
@@ -27,7 +27,7 @@ export const StudentIntroList: FC = () => {
                         (studentIntro.name && studentIntro.message) &&
                         <div
                             key={`${studentIntro.name}-${index}`}
-                            className='bg-[#222524] border-2 border-gray-500 my-2 p-4 rounded-lg'
+                            className='bg-[#222524] border-2 border-gray-500 my-4 p-4 rounded-lg'
                         >
                             <h4 className='text-[#80ebff] font-semibold tracking-wide italic text-lg'>
                                 {studentIntro.name}
@@ -45,7 +45,7 @@ export const StudentIntroList: FC = () => {
                         page > 1 &&
                         <button
                             onClick={() => setPage(page - 1)}
-                            className='bg-[#fa6ece] rounded-lg px-4 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
+                            className='bg-[#fa6ece] rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
                         >
                             Previous
                         </button>
@@ -57,7 +57,7 @@ export const StudentIntroList: FC = () => {
                         StudentIntroCoordinator.accounts.length > page * 5 &&
                         <button
                             onClick={() => setPage(page + 1)}
-                            className='bg-[#fa6ece] rounded-lg px-4 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
+                            className='bg-[#fa6ece] rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
                         >
                             Next
                         </button>

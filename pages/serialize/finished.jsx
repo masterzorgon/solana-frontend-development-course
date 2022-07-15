@@ -25,7 +25,7 @@ const Finished = () => {
     const handleTransactionSubmit = async studentIntro => {
         // check that the wallet is connected
         if (!connection || !publicKey) {
-            toast.error('Please connect to your wallet');
+            toast.error('Please connect your wallet.');
             return;
         }
         // call `serialize` on `StudentIntro` to get buffer byte data
@@ -114,7 +114,7 @@ const Finished = () => {
                     <div className='mt-6'>
                         <button
                             onClick={handleSubmit}
-                            className='bg-[#fa6ece] rounded-lg px-4 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
+                            className='bg-[#fa6ece] rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
                         >
                             Submit
                         </button>

@@ -21,11 +21,21 @@ const Index = () => {
         {
             id: '02',
             season: 'season-one',
-            title: 'buffer',
-            description: 'You will use buffer byte data to make transactions with existing Solana smart contracts.',
+            title: 'serialize',
+            description: 'You will serialize custom instruction data to interact with an existing Solana smart contract.',
             href: {
-                finished: '/buffer/finished',
-                starter: '/buffer/starter',
+                finished: '/serialize/finished',
+                starter: '/serialize/starter',
+            }
+        },
+        {
+            id: '03',
+            season: 'season-one',
+            title: 'deserialize',
+            description: '',
+            href: {
+                finished: '/deserialize/finished',
+                starter: '/deserialize/starter',
             }
         }
     ];
@@ -55,10 +65,10 @@ const Index = () => {
                             </div>
                             <div className='mt-8 font-semibold flex justify-between'>
                                 <div>
-                                    <a href={project.href.finished} className='bg-[#80ebff] text-black rounded-full px-4 py-2 hover:bg-white transition-all duration-200'>
+                                    <a href={project.href.finished} className='bg-[#80ebff] text-black rounded-full px-4 py-1 transition-all duration-200 border-2 border-transparent hover:border-[#80ebff] hover:bg-transparent hover:text-white'>
                                         preview
                                     </a>
-                                    <a href={project.href.starter} className='ml-4 bg-[#eb54bc] rounded-full px-4 py-2 hover:bg-white hover:text-black transition-all duration-200'>
+                                    <a href={project.href.starter} className='ml-4 bg-[#eb54bc] rounded-full px-4 py-1 transition-all duration-200 border-2 border-transparent hover:border-[#eb54bc] hover:bg-transparent'>
                                         starter
                                     </a>
                                 </div>
