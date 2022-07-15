@@ -24,12 +24,12 @@ export const StudentIntroList: FC = () => {
             <div className='mt-6'>
                 {
                     studentIntros.map((studentIntro, index) => (
-                        studentIntro.name && 
+                        (studentIntro.name && studentIntro.message) &&
                         <div
                             key={`${studentIntro.name}-${index}`}
                             className='bg-[#222524] border-2 border-gray-500 my-2 p-4 rounded-lg'
                         >
-                            <h4 className='text-[#80ebff] font-bold italic text-lg'>
+                            <h4 className='text-[#80ebff] font-semibold tracking-wide italic text-lg'>
                                 {studentIntro.name}
                             </h4>
                             <p className='text-sm mt-2'>
