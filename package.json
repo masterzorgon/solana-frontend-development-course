@@ -17,6 +17,7 @@
     "@solana/wallet-adapter-react-ui": "^0.9.8",
     "@solana/wallet-adapter-wallets": "^0.16.6",
     "@solana/web3.js": "^1.47.3",
+    "bs58": "^5.0.0",
     "dotenv": "^16.0.1",
     "next": "latest",
     "react": "17.0.2",
