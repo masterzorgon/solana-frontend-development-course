@@ -88,7 +88,7 @@ const Finished = () => {
                 </div>
                 <div className='col-span-1 sm:col-start-2 sm:col-end-2 flex justify-center'>
                     <button
-                        className='bg-[#fa6ece] font-semibold tracking-wide rounded-lg py-1 px-4 w-full disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:bg-transparent border-2 border-transparent enabled:hover:border-[#fa6ece]'
+                        className='bg-[#fa6ece] transition-all duration-200 font-semibold tracking-wide rounded-lg py-1 px-4 w-full disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:bg-transparent border-2 border-transparent enabled:hover:border-[#fa6ece]'
                         onClick={handleTransaction}
                         disabled={!account || !amount}
                     >

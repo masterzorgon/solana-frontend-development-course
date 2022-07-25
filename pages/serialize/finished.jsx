@@ -6,6 +6,22 @@ import { toast } from 'react-toastify';
 import { StudentIntro } from '../../models/StudentIntro';
 import { StudentIntroList } from '../../components/StudentIntroList';
 
+/* 
+    account data needs to be deserialized using the same 
+    layout used to store it in the first place
+
+    When submitting a transaction to a program, the client needs to 
+    include all addresses for accounts that will be written to or read from. 
+    This means that unlike more traditional client-server architectures, 
+    the client needs to have implementation-specific knowledge about 
+    the Solana program. The client needs to know which program 
+    derived address (PDA) is going to be used to store data 
+    so that it can include that address in the transaction.
+
+    when reading data from a program, the client needs to 
+    know which account(s) to read from
+*/
+
 const Finished = () => {
 
     const [name, setName] = React.useState('');
