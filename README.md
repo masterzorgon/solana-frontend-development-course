@@ -6,7 +6,7 @@ This repository is designed to help beginner web3 programmers find their legs de
 - Tailwind.CSS
 - solana/web3.js
 
-<img width="1161" alt="Screen Shot 2022-07-13 at 9 12 34 AM" src="https://user-images.githubusercontent.com/85138723/178754850-cbf77ba3-f207-47cd-bda6-8d2891cb2141.png">
+<img width="1322" alt="Screen Shot 2022-07-27 at 3 01 40 AM" src="https://user-images.githubusercontent.com/85138723/181194513-e07bbc2a-97df-48ad-9194-fc8c2bd8cf39.png">
 
 # Getting Started
 Navigate to a folder in your local environment and copy/paste the following commands into your terminal:
