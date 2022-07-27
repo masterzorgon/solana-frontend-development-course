@@ -1,6 +1,6 @@
 # A Solana Development Track by The Blockchain Collaborative at Baylor University
 
-Hey Baylor Bears! This repository was designed by Nathan Galindo on behalf of The Blockchain Collaborative at Baylor University. It is a course that is made up of a series of projects to help you get your feet wet developing on the Solana network. Why Solana? Because Solana is a third-generation protocol with incredibly high throughput, and astonishingly low transaction fees, making it an ideal blockchain for student builders to experiemtn with.
+Hey Baylor Bears! This repository was designed by [Nathan Galindo](https://www.linkedin.com/in/nathan-galindo-840835195/) on behalf of The Blockchain Collaborative at Baylor University. It is a course that is made up of a series of projects to help you get your feet wet developing on the Solana network. Why Solana? Because Solana is a third-generation protocol with incredibly high throughput, and astonishingly low transaction fees, making it an ideal blockchain for student builders to experiemtn with.
 
 <img width="1322" alt="Screen Shot 2022-07-27 at 3 01 40 AM" src="https://user-images.githubusercontent.com/85138723/181194513-e07bbc2a-97df-48ad-9194-fc8c2bd8cf39.png">
 
