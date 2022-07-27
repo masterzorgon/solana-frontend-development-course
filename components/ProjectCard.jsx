@@ -1,7 +1,7 @@
 import { CodeIcon, BeakerIcon } from '@heroicons/react/outline';
 
 const ProjectCard = ({ project, displayRequirements, setDisplayRequirements }) => (
-    <div key={project.id} className='rounded-lg h-60 p-5 bg-[#2a302f] col-span-1  flex flex-col justify-between'>
+    <div key={project.id} className='font-mono text-sm rounded-lg h-60 p-5 bg-[#2a302f] col-span-1  flex flex-col justify-between'>
         <div className='flex justify-between text-xl'>
             <div>
                 <BeakerIcon />
