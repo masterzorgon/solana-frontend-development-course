@@ -1,6 +1,9 @@
+// library we use to interact with the solana json rpc api
 import * as web3 from '@solana/web3.js';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+// ConnectionProvider is a component that provides a connection to the solana
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'; 
 import * as walletAdapterWallets from '@solana/wallet-adapter-wallets';
+// imports a component which can be rendered in the browser
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 require('@solana/wallet-adapter-react-ui/styles.css');
