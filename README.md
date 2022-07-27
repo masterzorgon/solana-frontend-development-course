@@ -1,10 +1,12 @@
 # A Solana Development Track by The Blockchain Collaborative at Baylor University
 
-This repository is designed to help beginner web3 programmers find their legs developing on the Solana network. Thus far, this track is catered torwards front-end development with emphasis on:
+Hey Baylor Bears! This repository was designed by Nathan Galindo on behalf of The Blockchain Collaborative at Baylor University. It is a course that is made up of a series of projects to help you get your feet wet developing on the Solana network. Thus far, the course mainly focuses on front-end development and gives you an introduction to teh technologies listed below:
 
 - Next.js
 - Tailwind.CSS
 - solana/web3.js
+
+The frameworks and tools used to build out these assignments were chosen because they are the tools real companies and startups are using in the blockchain industry to build out real-world production applications. Even though they may be new to you, becoming familiar with them will greatly benefit your hireability as a software engineer.
 
 <img width="1322" alt="Screen Shot 2022-07-27 at 3 01 40 AM" src="https://user-images.githubusercontent.com/85138723/181194513-e07bbc2a-97df-48ad-9194-fc8c2bd8cf39.png">
 
