@@ -6,11 +6,12 @@ Hey Baylor Bears! This repository was designed by [Nathan Galindo](https://www.l
 
 # Tech Stack
 
-Thus far, the course mainly focuses on front-end development where you will be building small applications using standard front-end frameworks, ut interating with the Solana JSON RPC API using solana/web3.js. Listed below are the main frameworks and tools you will be working with:
+Thus far, the course mainly focuses on front-end development where you will be building small applications using standard front-end frameworks and interating with the Solana JSON RPC API using solana/web3.js. Listed below are the main frameworks and tools you will be working with:
 
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [solana/web3.js](https://solana-labs.github.io/solana-web3.js/)
+- [Solana Wallet Adapter](https://github.com/solana-labs/wallet-adapter)
 
 The frameworks and tools used to build out these assignments were chosen because they are the tools real companies and startups are using in the blockchain industry to build out real production applications. Even though they may be new to you, becoming familiar with them will greatly benefit your hireability as a software engineer (both in, and beyond the blockchain industry)!
 
