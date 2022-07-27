@@ -6,7 +6,7 @@ Hey Baylor Bears! This repository was designed by [Nathan Galindo](https://www.l
 
 # Tech Stack
 
-Thus far, the course mainly focuses on front-end development and gives you an introduction to teh technologies listed below:
+Thus far, the course mainly focuses on front-end development where you will be building small applications using standard front-end frameworks, ut interating with the Solana JSON RPC API using solana/web3.js. Listed below are the main frameworks and tools you will be working with:
 
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
