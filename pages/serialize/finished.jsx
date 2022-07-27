@@ -129,8 +129,9 @@ const Finished = () => {
                     </div>
                     <div className='mt-6'>
                         <button
+                            disabled={name === '' || thoughts === ''}
                             onClick={handleSubmit}
-                            className='bg-[#fa6ece] rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
+                            className='disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#fa6ece] bg-[#fa6ece] rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
                         >
                             Submit
                         </button>
