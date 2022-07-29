@@ -7,6 +7,7 @@ Hey Baylor Bears! This repository was designed by [Nathan Galindo](https://www.l
 Thus far, the course mainly focuses on front-end development where you will be building small applications using standard front-end frameworks and interating with the [Solana JSON RPC API](https://docs.solana.com/developing/clients/jsonrpc-api?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCZyftNFV4i4Sygxkr6LdPazw2sLMPyhQbVqFID-yy8QSqf81dxJHUoaAk2ZEALw_wcB) using solana/web3.js. Listed below are the main frameworks and tools you will be working with:
 
 - [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [solana/web3.js](https://solana-labs.github.io/solana-web3.js/)
 - [Solana Wallet Adapter](https://github.com/solana-labs/wallet-adapter)
