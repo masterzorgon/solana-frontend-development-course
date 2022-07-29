@@ -33,7 +33,7 @@ export const season_one = [
         id: '04',
         season: 'season-one',
         title: 'tokens',
-        description: 'You will use the JSON RPC API to interact with an existing Solana program and create token mints, among other operations.',
+        description: 'You will use the @solana/spl-token library to create Token Mints, create SPL-tokens, and burn tokens.',
         href: {
             finished: '/tokens/finished',
             starter: '/tokens/starter',

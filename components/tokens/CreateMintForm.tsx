@@ -81,7 +81,7 @@ const CreateMintFrom: React.FC = () => {
                 </h2>
                 <button
                     type='submit'
-                    className='bg-[#fa6ece] rounded-lg sm:py-2 px-4 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
+                    className='bg-[#fa6ece] rounded-lg py-1 sm:py-2 px-4 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
                 >
                     Create Mint
                 </button>
