@@ -3,8 +3,8 @@ import * as web3 from '@solana/web3.js';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { toast } from 'react-toastify';
 
-import { StudentIntro } from '../../models/StudentIntro';
-import { StudentIntroList } from '../../components/StudentIntroList';
+import { StudentIntro } from '../../models/serialize/StudentIntro';
+import { StudentIntroList } from '../../components/serialize/StudentIntroList';
 
 /* 
     account data needs to be deserialized using the same 
@@ -49,8 +49,8 @@ const Finished = () => {
         // create a new `Transaction` object
         const transaction = new web3.Transaction();
         // get all accounts that the transaction will interact with
-        const [pda] = await web3.PublicKey.findProgramAddress(
-            [publicKey.toBuffer()],
+        const [ pda ] = await web3.PublicKey.findProgramAddress(
+            [ publicKey.toBuffer() ],
             new web3.PublicKey(TARGET_PROGRAM_ID)
         );
         // create a new `Instruction` object containing `keys`, `programId`, `buffer byte data`

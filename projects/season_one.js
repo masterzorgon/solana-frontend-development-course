@@ -32,11 +32,11 @@ export const season_one = [
     {
         id: '04',
         season: 'season-one',
-        title: 'accounts',
-        description: 'You will practice manipulating the custom data you fetch from existing accounts on the Solana devnet.',
+        title: 'tokens',
+        description: 'You will use the JSON RPC API to interact with an existing Solana program and create token mints, among other operations.',
         href: {
-            finished: '/accounts/finished',
-            starter: '/accounts/starter',
+            finished: '/tokens/finished',
+            starter: '/tokens/starter',
         }
     }
 ];

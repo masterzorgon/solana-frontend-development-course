@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react'
-import { StudentIntro } from '../models/StudentIntro'
+import { StudentIntro } from '../../models/serialize/StudentIntro'
 import * as web3 from '@solana/web3.js'
-import { StudentIntroCoordinator } from '../coordinators/StudentIntroCoordinator'
+import { StudentIntroCoordinator } from '../../coordinators/serialize/StudentIntroCoordinator'
 
 export const StudentIntroList: FC = () => {
     const connection = new web3.Connection(web3.clusterApiUrl('devnet'))
