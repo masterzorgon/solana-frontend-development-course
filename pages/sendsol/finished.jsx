@@ -15,6 +15,7 @@ const Finished = () => {
     const handleTransaction = async () => {
         try {
             if (!connection || !publicKey) {
+                toast.error('Please connect your wallet.');
                 return;
             }
 

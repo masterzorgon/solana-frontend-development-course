@@ -32,7 +32,7 @@ const Finished = () => {
     const { connection } = useConnection();
     const { publicKey, sendTransaction } = useWallet();
 
-    const handleSubmit = async event => {
+    const createSubmission = async event => {
         event.preventDefault();
         const studentIntro = new StudentIntro(name, thoughts);
         await handleTransactionSubmit(studentIntro);
@@ -130,7 +130,7 @@ const Finished = () => {
                     <div className='mt-6'>
                         <button
                             disabled={name === '' || thoughts === ''}
-                            onClick={handleSubmit}
+                            onClick={event => createSubmission(event)}
                             className='disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#fa6ece] bg-[#fa6ece] rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
                         >
                             Submit

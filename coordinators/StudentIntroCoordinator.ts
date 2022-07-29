@@ -13,26 +13,30 @@ export class StudentIntroCoordinator {
             {
                 dataSlice: { offset: 1, length: 12 },
                 filters: search === '' ? [] : [
-                    { 
-                        memcmp: 
-                            { 
-                                offset: 5, 
-                                bytes: bs58.encode(Buffer.from(search))
-                            }
+                    {
+                        memcmp:
+                        {
+                            offset: 5,
+                            bytes: bs58.encode(Buffer.from(search))
+                        }
                     }
                 ]
             }
-        )
+        );
 
-        accounts.sort( (a, b) => {
+        accounts.sort((a, b) => {
             const lengthA = a.account.data.readUInt32LE(0)
             const lengthB = b.account.data.readUInt32LE(0)
+
+            // borsh adds u32 int at the beginning of the string. 
+            // we must create a data slice with a 4 byte offset
             const dataA = a.account.data.slice(4, 4 + lengthA)
             const dataB = b.account.data.slice(4, 4 + lengthB)
-            return dataA.compare(dataB)
-        })
 
-        this.accounts = accounts.map(account => account.pubkey)
+            return dataA.compare(dataB)
+        });
+
+        this.accounts = accounts.map(account => account.pubkey);
     }
 
     static async fetchPage(connection: web3.Connection, page: number, perPage: number, search: string, reload: boolean = false): Promise<StudentIntro[]> {
@@ -43,23 +47,24 @@ export class StudentIntroCoordinator {
         const paginatedPublicKeys = this.accounts.slice(
             (page - 1) * perPage,
             page * perPage,
-        )
+        );
 
         if (paginatedPublicKeys.length === 0) {
             return []
         }
 
-        const accounts = await connection.getMultipleAccountsInfo(paginatedPublicKeys)
+        const accounts = await connection.getMultipleAccountsInfo(paginatedPublicKeys);
 
         const movies = accounts.reduce((accum: StudentIntro[], account) => {
-            const movie = StudentIntro.deserialize(account?.data)
+            const movie = StudentIntro.deserialize(account?.data);
+
             if (!movie) {
                 return accum
             }
 
-            return [...accum, movie]
-        }, [])
+            return [...accum, movie];
+        }, []);
 
-        return movies
+        return movies;
     }
 }
