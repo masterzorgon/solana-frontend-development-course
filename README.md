@@ -10,7 +10,8 @@ Thus far, the course mainly focuses on front-end development where you will be b
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [solana/web3.js](https://solana-labs.github.io/solana-web3.js/)
-- [Solana Wallet Adapter](https://github.com/solana-labs/wallet-adapter)
+- [solana/spl-token](https://solana-labs.github.io/solana-program-library/token/js/index.html)
+- [Solana Wallet Adapter](https://solana-labs.github.io/wallet-adapter/)
 
 The frameworks and tools used to build out these projects were carefully selected because they are the tools real companies are using in the blockchain industry to build out production applications. Even though they may be new to you, becoming familiar with them will greatly benefit your hireability as a software engineer (both within, and beyond the blockchain industry)!
 
