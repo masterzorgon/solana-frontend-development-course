@@ -4,7 +4,7 @@ Hey Baylor Bears! This repository was designed by [Nathan Galindo](https://www.l
 <img width="1322" alt="Screen Shot 2022-07-27 at 3 01 40 AM" src="https://user-images.githubusercontent.com/85138723/181194513-e07bbc2a-97df-48ad-9194-fc8c2bd8cf39.png">
 
 # Tech Stack
-Thus far, the course mainly focuses on front-end development where you will be building small applications using industry standard front-end technologies as well as some web3 frameworks to interact with the [Solana JSON RPC API](https://docs.solana.com/developing/clients/jsonrpc-api?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCZyftNFV4i4Sygxkr6LdPazw2sLMPyhQbVqFID-yy8QSqf81dxJHUoaAk2ZEALw_wcB) using [solana/web3.js](https://solana-labs.github.io/solana-web3.js/). Listed below are the main frameworks and tools you will be working with:
+Thus far, the course mainly focuses on front-end development where you will be building small applications using industry standard front-end technologies as well as some web3 frameworks to interact with the [Solana JSON RPC API](https://docs.solana.com/developing/clients/jsonrpc-api?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCZyftNFV4i4Sygxkr6LdPazw2sLMPyhQbVqFID-yy8QSqf81dxJHUoaAk2ZEALw_wcB). Listed below are the main frameworks and tools you will be working with:
 
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
