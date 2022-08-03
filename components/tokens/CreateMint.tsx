@@ -41,19 +41,18 @@ const CreateMint = (props: CreateMintProps) => {
 
             // prompts the user to sign the transaction and submit it to the network
             const signature = await props.sendTransaction(transaction, props.connection, { signers: [tokenMint] });
-            props.setMintTx(signature.toString());
-            props.setMintAddr(tokenMint.publicKey.toString());
+            props.setMintTx(signature);
+            props.setMintAddr(tokenMint.publicKey);
         } catch (err) {
             toast.error('Error creating Token Mint');
             console.log('error', err);
         }
-
     };
 
     const outputs = [
         {
             title: 'Token Mint Address...',
-            dependency: props.mintAddr,
+            dependency: props.mintAddr!,
             href: `https://explorer.solana.com/address/${props.mintAddr}?cluster=devnet`,
         },
         {
@@ -89,7 +88,7 @@ const CreateMint = (props: CreateMintProps) => {
                                     rel='noopener noreferrer'
                                     className='flex text-[#80ebff] italic hover:text-white transition-all duration-200'
                                     >
-                                    {dependency.slice(0, 25)}...
+                                    {dependency.toString().slice(0, 25)}...
                                     <ExternalLinkIcon className='w-5 ml-1' />
                                 </a>
                             }

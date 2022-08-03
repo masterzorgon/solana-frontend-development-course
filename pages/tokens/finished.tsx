@@ -12,11 +12,11 @@ const Finished = () => {
 
     // Token Mint
     const [mintTx, setMintTx] = React.useState<string>("");
-    const [mintAddr, setMintAddr] = React.useState<string>("");
+    const [mintAddr, setMintAddr] = React.useState<web3.PublicKey | undefined>(undefined);
 
     // Token Account
     const [accTx, setAccTx] = React.useState<string>("");
-    const [accAddr, setAccAddr] = React.useState<string>("");
+    const [accAddr, setAccAddr] = React.useState<web3.PublicKey | undefined>(undefined);
 
     const { connection } = useConnection();
     const { publicKey, sendTransaction } = useWallet();
@@ -46,6 +46,7 @@ const Finished = () => {
             <CreateAccount
                 accTx={accTx}
                 accAddr={accAddr}
+                mintAddr={mintAddr}
 
                 connection={connection}
                 publicKey={publicKey}

@@ -3,13 +3,13 @@ import * as web3 from "@solana/web3.js";
 
 export interface CreateMintProps {
     mintTx: string;
-    mintAddr: string;
+    mintAddr: web3.PublicKey | undefined;
 
     connection: web3.Connection;
     publicKey: web3.PublicKey | null;
 
     setMintTx: (transaction: string) => void;
-    setMintAddr: (address: string) => void;
+    setMintAddr: (address: web3.PublicKey) => void;
 
     connectionErr: () => boolean | undefined;
     sendTransaction: (
@@ -21,13 +21,14 @@ export interface CreateMintProps {
 
 export interface CreateAccountProps {
     accTx: string;
-    accAddr: string;
+    accAddr: web3.PublicKey | undefined;
+    mintAddr: web3.PublicKey | undefined;
 
     connection: web3.Connection;
     publicKey: web3.PublicKey | null;
 
     setAccTx: (transaction: string) => void;
-    setAccAddr: (address: string) => void;
+    setAccAddr: (address: web3.PublicKey) => void;
 
     connectionErr: () => boolean | undefined;
     sendTransaction: (
