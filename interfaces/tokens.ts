@@ -1,5 +1,6 @@
-import { SendTransactionOptions } from "@solana/wallet-adapter-base";
+import * as React from "react";
 import * as web3 from "@solana/web3.js";
+import { SendTransactionOptions } from "@solana/wallet-adapter-base";
 
 export interface CreateMintProps {
     mintTx: string;
@@ -37,3 +38,17 @@ export interface CreateAccountProps {
         options?: SendTransactionOptions,
     ) => Promise<string>;
 };
+
+interface OutputItem {
+    title: string;
+    dependency: web3.PublicKey | string;
+    href: string;
+}
+export interface RenderedComponentProps {
+    title: string;
+    buttonText: string;
+
+    method: (event: React.FormEvent<HTMLFormElement>) => void;
+    validation: web3.PublicKey | undefined | null;
+    outputs: OutputItem[];
+}

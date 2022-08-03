@@ -1,9 +1,7 @@
 import * as React from "react";
 import { toast } from "react-toastify";
 import * as web3 from "@solana/web3.js";
-import * as token from "@solana/spl-token";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { initializeKeypair } from "../../scripts/tokens/InitializeKeypair";
 
 import CreateMint from "../../components/tokens/CreateMint";
 import CreateAccount from "../../components/tokens/CreateAccount";
