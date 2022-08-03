@@ -111,7 +111,7 @@ const Finished = () => {
                             id='name'
                             type="text"
                             placeholder='Your name'
-                            className='py-1 w-full text-white bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
+                            className='text-[#9e80ff] py-1 w-full bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
                             onChange={event => setName(event.target.value)}
                         />
                     </div>
@@ -123,7 +123,7 @@ const Finished = () => {
                             id='thoughts'
                             type="text"
                             placeholder='Your thoughts'
-                            className='py-1 w-full text-white bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
+                            className='text-[#9e80ff] py-1 w-full bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
                             onChange={event => setThoughts(event.target.value)}
                         />
                     </div>

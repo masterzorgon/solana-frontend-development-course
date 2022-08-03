@@ -16,6 +16,7 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 
 const Finished = () => {
 
+    // allows us to add the wallet account balance to our react function component
     const [balance, setBalance] = React.useState(0);
 
     // we specify which network we want to connect to
@@ -25,7 +26,9 @@ const Finished = () => {
         new walletAdapterWallets.PhantomWalletAdapter()
     ];
 
+    // connection context object that is injected into the browser by the wallet
     const { connection } = useConnection();
+    // user's public key of the wallet they connected to our application
     const { publicKey } = useWallet();
 
     // when the status of `connection` or `publicKey` changes, we execute the code block below
@@ -38,6 +41,7 @@ const Finished = () => {
             }
         }
         getInfo();
+        // the code above will execute whenever these variables change in any way
     }, [connection, publicKey]);
 
     return (
