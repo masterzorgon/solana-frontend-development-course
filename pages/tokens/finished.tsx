@@ -24,7 +24,7 @@ const Finished = () => {
     const connectionErr = () => {
         if (!publicKey || !connection) {
             toast.error("Please connect your wallet");
-            return;
+            return true;
         }
     };
 

@@ -11,7 +11,7 @@ export interface CreateMintProps {
     setMintTx: (transaction: string) => void;
     setMintAddr: (address: string) => void;
 
-    connectionErr: () => void;
+    connectionErr: () => boolean | undefined;
     sendTransaction: (
         transaction: web3.Transaction,
         connection: web3.Connection,
@@ -29,7 +29,7 @@ export interface CreateAccountProps {
     setAccTx: (transaction: string) => void;
     setAccAddr: (address: string) => void;
 
-    connectionErr: () => void;
+    connectionErr: () => boolean | undefined;
     sendTransaction: (
         transaction: web3.Transaction,
         connection: web3.Connection,

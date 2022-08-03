@@ -12,42 +12,42 @@ const CreateMint = (props: CreateMintProps) => {
         event.preventDefault();
 
         // checks if wallet is connected
-        props.connectionErr();
+        if (props.connectionErr()) { return; }
 
-        // Token Mints are accounts which hold data ABOUT a specific token.
-        // Token Mints DO NOT hold tokens themselves.
-        const tokenMint = web3.Keypair.generate();
-        // amount of SOL required for the account to not be deallocated
-        const lamports = await token.getMinimumBalanceForRentExemptMint(props.connection);
-        // `token.createMint` function creates a transaction with the following two instruction: `createAccount` and `createInitializeMintInstruction`.
-        const transaction = new web3.Transaction().add(
-            // creates a new account
-            web3.SystemProgram.createAccount({
-                fromPubkey: props.publicKey!,
-                newAccountPubkey: tokenMint.publicKey,
-                space: token.MINT_SIZE,
-                lamports,
-                programId: token.TOKEN_PROGRAM_ID
-            }),
-            // initializes the new account is a Token Mint account
-            token.createInitializeMintInstruction(
-                tokenMint.publicKey,
-                0,
-                props.publicKey!,
-                token.TOKEN_PROGRAM_ID
-            )
-        );
+        try {
+            // Token Mints are accounts which hold data ABOUT a specific token.
+            // Token Mints DO NOT hold tokens themselves.
+            const tokenMint = web3.Keypair.generate();
+            // amount of SOL required for the account to not be deallocated
+            const lamports = await token.getMinimumBalanceForRentExemptMint(props.connection);
+            // `token.createMint` function creates a transaction with the following two instruction: `createAccount` and `createInitializeMintInstruction`.
+            const transaction = new web3.Transaction().add(
+                // creates a new account
+                web3.SystemProgram.createAccount({
+                    fromPubkey: props.publicKey!,
+                    newAccountPubkey: tokenMint.publicKey,
+                    space: token.MINT_SIZE,
+                    lamports,
+                    programId: token.TOKEN_PROGRAM_ID
+                }),
+                // initializes the new account is a Token Mint account
+                token.createInitializeMintInstruction(
+                    tokenMint.publicKey,
+                    0,
+                    props.publicKey!,
+                    token.TOKEN_PROGRAM_ID
+                )
+            );
 
-        // prompts the user to sign the transaction and submit it to the network
-        props.sendTransaction(transaction, props.connection, { signers: [tokenMint] })
-            .then(sig => {
-                props.setMintTx(sig);
-                props.setMintAddr(tokenMint.publicKey.toString());
-            })
-            .catch(err => {
-                toast.error(err.message);
-                console.log('error', err);
-            });
+            // prompts the user to sign the transaction and submit it to the network
+            const signature = await props.sendTransaction(transaction, props.connection, { signers: [tokenMint] });
+            props.setMintTx(signature.toString());
+            props.setMintAddr(tokenMint.publicKey.toString());
+        } catch (err) {
+            toast.error('Error creating Token Mint');
+            console.log('error', err);
+        }
+
     };
 
     const outputs = [
