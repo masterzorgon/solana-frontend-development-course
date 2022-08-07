@@ -2,7 +2,7 @@ import React from 'react';
 
 import Requirements from '../components/Requirements';
 import ProjectCard from '../components/ProjectCard';
-import { season_one } from '../projects/season_one';
+import { projects } from '../projects/projects';
 
 const Index = () => {
 
@@ -16,7 +16,7 @@ const Index = () => {
             />
             <section className='flex justify-center'>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl'>
-                    {season_one.map(project => (
+                    {projects.map(project => (
                         <ProjectCard
                             project={project}
                             displayRequirements={displayRequirements}

@@ -30,7 +30,7 @@ const CreateMint = (props: CreateMintProps) => {
                     lamports,
                     programId: token.TOKEN_PROGRAM_ID
                 }),
-                // initializes the new account is a Token Mint account
+                // initializes the new account as a Token Mint account
                 token.createInitializeMintInstruction(
                     tokenMint.publicKey,
                     0,

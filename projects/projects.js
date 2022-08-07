@@ -1,4 +1,4 @@
-export const season_one = [
+export const projects = [
     {
         id: '01',
         season: 'season-one',
@@ -37,6 +37,16 @@ export const season_one = [
         href: {
             finished: '/tokens/finished',
             starter: '/tokens/starter',
+        }
+    },
+    {
+        id: '02',
+        season: 'season-two',
+        title: 'first try',
+        description: 'You will create a simple UI to interact with a Solana smart contract which you will create using Rust.',
+        href: {
+            finished: '/helloworld/finished',
+            starter: '/helloworld/starter',
         }
     }
 ];

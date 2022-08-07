@@ -13,12 +13,15 @@ const CreateAccount = (props: CreateAccountProps) => {
         if (props.connectionErr()) { return; }
 
         try {
+            // Token Accounts are accounts which hold tokens of a given mint.
             const tokenAccount = web3.Keypair.generate();
             const space = token.ACCOUNT_SIZE;
+            // amount of SOL required for the account to not be deallocated
             const lamports = await props.connection.getMinimumBalanceForRentExemption(space);
             const programId = token.TOKEN_PROGRAM_ID;
 
             const transaction = new web3.Transaction().add(
+                // creates a new account
                 web3.SystemProgram.createAccount({
                     fromPubkey: props.publicKey!,
                     newAccountPubkey: tokenAccount.publicKey,
@@ -26,6 +29,7 @@ const CreateAccount = (props: CreateAccountProps) => {
                     lamports,
                     programId
                 }),
+                // initializes the new account as a Token Account account
                 token.createInitializeAccountInstruction(
                     tokenAccount.publicKey, // account to initialize
                     props.mintAddr!, // token mint address
@@ -34,6 +38,7 @@ const CreateAccount = (props: CreateAccountProps) => {
                 )   
             );
 
+            // prompts the user to sign the transaction and submit it to the network
             const signature = await props.sendTransaction(transaction, props.connection, { signers: [tokenAccount] });
             props.setAccTx(signature);
             props.setAccAddr(tokenAccount.publicKey);

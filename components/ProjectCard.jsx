@@ -10,7 +10,9 @@ const ProjectCard = ({ project, displayRequirements, setDisplayRequirements }) =
                 </div>
                 <div>
                     <h2 className='font-light italic tracking-wide'>{project.title}</h2>
-                    <p className='text-sm text-[#80ebff]'>{project.season}</p>
+                    <p className='text-sm text-[#80ebff]'>
+                        {project.season}
+                    </p>
                 </div>
             </div>
             <div>
