@@ -3,7 +3,7 @@ import * as web3 from '@solana/web3.js';
 import * as token from '@solana/spl-token';
 import { toast } from 'react-toastify';
 import { CreateMintProps } from '../../interfaces/tokens';
-import RenderedComponent from '../../components/tokens/RenderedComponent';
+import RenderedComponent from '../RenderedComponent';
 
 const CreateMint = (props: CreateMintProps) => {
 

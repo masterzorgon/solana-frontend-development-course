@@ -16,8 +16,9 @@ const Index = () => {
             />
             <section className='flex justify-center'>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl'>
-                    {projects.map(project => (
+                    {projects.map((project, index) => (
                         <ProjectCard
+                            index={index}
                             project={project}
                             displayRequirements={displayRequirements}
                             setDisplayRequirements={setDisplayRequirements}

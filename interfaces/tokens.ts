@@ -44,6 +44,7 @@ interface OutputItem {
     dependency: web3.PublicKey | string;
     href: string;
 }
+
 export interface RenderedComponentProps {
     title: string;
     buttonText: string;

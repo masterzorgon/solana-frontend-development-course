@@ -1,9 +1,9 @@
 import { ExternalLinkIcon } from '@heroicons/react/outline';
-import { RenderedComponentProps } from '../../interfaces/tokens';
+import { RenderedComponentProps } from '../interfaces/tokens';
 
 const RenderedComponent = (props: RenderedComponentProps) => {
     return (
-        <form onSubmit={event => props.method(event)} className='rounded-lg min-h-content p-4 bg-[#2a302f] sm:col-span-6 lg:col-start-2 lg:col-end-6'>
+        <form onSubmit={event => props.method(event)} className='rounded-lg min-h-content bg-[#2a302f] p-4 sm:col-span-6 lg:col-start-2 lg:col-end-6'>
             <div className='flex justify-between items-center'>
                 <h2 className='text-lg sm:text-2xl font-semibold'>
                     {props.title}

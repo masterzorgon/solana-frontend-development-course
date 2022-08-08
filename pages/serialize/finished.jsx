@@ -97,7 +97,7 @@ const Finished = () => {
 
     return (
         <main className='min-h-screen text-white'>
-            {/* CONTACT FORM */}
+            {/* FORM */}
             <section className='grid grid-cols-1 sm:grid-cols-6 gap-4 p-4'>
                 <form className='rounded-lg min-h-content p-4 bg-[#2a302f] sm:col-span-6 lg:col-start-2 lg:col-end-6'>
                     <h2 className='font-bold text-2xl text-[#fa6ece]'>
