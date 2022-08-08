@@ -3,7 +3,7 @@ import * as web3 from '@solana/web3.js';
 import * as borsh from '@project-serum/borsh';
 import { toast } from 'react-toastify';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
-import RenderedComponent from '../../components/RenderedComponent';
+import { ExternalLinkIcon } from '@heroicons/react/outline';
 
 const Finished = () => {
 
@@ -91,13 +91,30 @@ const Finished = () => {
         }
     };
 
+    const outputs = [
+        {
+            title: 'Transaction Signature...',
+            dependency: txSig,
+            href: `https://explorer.solana.com/tx/${txSig}?cluster=devnet`
+        }
+    ];
+
     return (
         <main className='min-h-screen text-white max-w-7xl'>
             <section className='grid grid-cols-1 sm:grid-cols-6 gap-4 p-4'>
                 <form className='rounded-lg min-h-content p-4 bg-[#2a302f] sm:col-span-6 lg:col-start-2 lg:col-end-6'>
-                    <h2 className='font-bold text-2xl text-[#fa6ece]'>
-                        Movie Review ✨
-                    </h2>
+                    <div className='flex justify-between items-center'>
+                        <h2 className='font-bold text-2xl text-[#fa6ece]'>
+                            Movie Review ✨
+                        </h2>
+                        <button
+                            disabled={!title || !description || !rating}
+                            onClick={event => sendMovieReview(event)}
+                            className='disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#fa6ece] bg-[#fa6ece] rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
+                        >
+                            Submit
+                        </button>
+                    </div>
                     <div className='mt-6'>
                         <h3 className='italic text-sm'>
                             What is the name of the movie?
@@ -136,14 +153,26 @@ const Finished = () => {
                             onChange={event => setRating(parseInt(event.target.value))}
                         />
                     </div>
-                    <div className='mt-6'>
-                        <button
-                            disabled={!title || !description || !rating}
-                            onClick={event => sendMovieReview(event)}
-                            className='disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#fa6ece] bg-[#fa6ece] rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
-                        >
-                            Submit
-                        </button>
+                    <div className='text-sm font-semibold mt-8 bg-[#222524] border-2 border-gray-500 rounded-lg p-2'>
+                        <ul className='p-2'>
+                            {outputs.map(({ title, dependency, href }, index) => (
+                                <li key={title} className={`flex justify-between items-center ${index !== 0 && 'mt-4'}`}>
+                                    <p className='tracking-wider'>{title}</p>
+                                    {
+                                        dependency &&
+                                        <a
+                                            href={href}
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                            className='flex text-[#80ebff] italic hover:text-white transition-all duration-200'
+                                        >
+                                            {dependency.toString().slice(0, 25)}...
+                                            <ExternalLinkIcon className='w-5 ml-1' />
+                                        </a>
+                                    }
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </form>
             </section>
