@@ -10,6 +10,15 @@ export const projects = [
     },
     {
         season: 'season-one',
+        title: 'faucet',
+        description: 'You will build a SOL faucet that you will use to fund your Phantom browser wallet.',
+        href: {
+            finished: '/faucet/finished',
+            starter: '/faucet/starter',
+        }
+    },
+    {
+        season: 'season-one',
         title: 'send sol',
         description: 'You will create an application that allows you to send SOL to another wallet on the Solana devnet.',
         href: {
