@@ -124,8 +124,8 @@ const Finished = () => {
                                             rel='noopener noreferrer'
                                             className={`flex text-[#80ebff] italic ${href && "hover:text-white"} transition-all duration-200`}
                                         >
-                                            {dependency.toString().slice(0, 25)}...
-                                            <ExternalLinkIcon className='w-5 ml-1' />
+                                            {dependency.toString().slice(0, 25)}
+                                            {href && <ExternalLinkIcon className='w-5 ml-1' />}
                                         </a>
                                     }
                                 </li>
