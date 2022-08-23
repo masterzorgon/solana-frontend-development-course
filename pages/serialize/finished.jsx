@@ -113,7 +113,7 @@ const Finished = () => {
                         </button>
                     </div>
                     <div className='pb-2'>
-                        <div className='mt-6'>
+                        <div className='mt-4'>
                             <h3 className='italic text-sm'>
                                 What do we call you?
                             </h3>
