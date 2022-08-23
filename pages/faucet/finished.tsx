@@ -65,7 +65,7 @@ const Finished = () => {
     return (
         <main className='max-w-7xl grid grid-cols-1 sm:grid-cols-6 gap-4 p-4 text-white'>
             <RenderedComponent
-                title="Faucet 🪄"
+                title="Faucet 🚰"
                 buttonText="Fund"
     
                 outputs={outputs}
