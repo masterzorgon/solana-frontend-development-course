@@ -73,12 +73,15 @@ const Finished = () => {
             ]
         });
 
+        transaction.add(instruction);
+
         try {
-            transaction.add(instruction);
             const signature = await sendTransaction(transaction, connection);
             setTxSig(signature);
             console.log(`https://explorer.solana.com/tx/${signature}?cluster=devnet`);
-
+        } catch (error) {
+            console.error(error);
+        } finally {
             setDescription(null);
             setRating(null);
             setTitle(null);
@@ -86,8 +89,6 @@ const Finished = () => {
             (document.getElementById('title') as HTMLInputElement).value = '';
             (document.getElementById('description') as HTMLInputElement).value = '';
             (document.getElementById('rating') as HTMLInputElement).value = '';
-        } catch (error) {
-            console.error(error);
         }
     };
 
