@@ -76,7 +76,7 @@ const Finished = () => {
                 <form className='rounded-lg min-h-content p-4 bg-[#2a302f] sm:col-span-6 lg:col-start-2 lg:col-end-6'>
                     <div className='flex justify-between items-center'>
                         <h2 className='font-bold text-2xl text-[#fa6ece]'>
-                            Balance 💸
+                            Send Sol 💸
                         </h2>
                         <button
                             onClick={handleTransaction}
