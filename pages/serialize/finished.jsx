@@ -100,34 +100,10 @@ const Finished = () => {
             {/* FORM */}
             <section className='grid grid-cols-1 sm:grid-cols-6 gap-4 p-4'>
                 <form className='rounded-lg min-h-content p-4 bg-[#2a302f] sm:col-span-6 lg:col-start-2 lg:col-end-6'>
-                    <h2 className='font-bold text-2xl text-[#fa6ece]'>
-                        Introduce yourself ✌️
-                    </h2>
-                    <div className='mt-6'>
-                        <h3 className='italic text-sm'>
-                            What do we call you?
-                        </h3>
-                        <input
-                            id='name'
-                            type="text"
-                            placeholder='Your name'
-                            className='text-[#9e80ff] py-1 w-full bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
-                            onChange={event => setName(event.target.value)}
-                        />
-                    </div>
-                    <div className='mt-6'>
-                        <h3 className='italic text-sm'>
-                            What brings you to Solana?
-                        </h3>
-                        <input
-                            id='thoughts'
-                            type="text"
-                            placeholder='Your thoughts'
-                            className='text-[#9e80ff] py-1 w-full bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
-                            onChange={event => setThoughts(event.target.value)}
-                        />
-                    </div>
-                    <div className='mt-6'>
+                    <div className='flex justify-between items-center'>
+                        <h2 className='font-bold text-2xl text-[#fa6ece]'>
+                            Introduce yourself ✌️
+                        </h2>
                         <button
                             disabled={name === '' || thoughts === ''}
                             onClick={event => createSubmission(event)}
@@ -135,6 +111,32 @@ const Finished = () => {
                         >
                             Submit
                         </button>
+                    </div>
+                    <div className='pb-2'>
+                        <div className='mt-6'>
+                            <h3 className='italic text-sm'>
+                                What do we call you?
+                            </h3>
+                            <input
+                                id='name'
+                                type="text"
+                                placeholder='Your name'
+                                className='text-[#9e80ff] py-1 w-full bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
+                                onChange={event => setName(event.target.value)}
+                            />
+                        </div>
+                        <div className='mt-6'>
+                            <h3 className='italic text-sm'>
+                                What brings you to Solana?
+                            </h3>
+                            <input
+                                id='thoughts'
+                                type="text"
+                                placeholder='Your thoughts'
+                                className='text-[#9e80ff] py-1 w-full bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
+                                onChange={event => setThoughts(event.target.value)}
+                            />
+                        </div>
                     </div>
                 </form>
             </section>
