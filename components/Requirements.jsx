@@ -38,6 +38,16 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
             title: 'Git',
             url: 'https://git-scm.com/',
             description: 'A version control system...'
+        },
+        {
+            title: 'Solana CLI',
+            url: 'https://docs.solana.com/cli/install-solana-cli-tools',
+            description: 'A command line interface for the Solana blockchain...'
+        },
+        {
+            title: 'Anchor CLI',
+            url: 'https://www.anchor-lang.com/docs/installation',
+            description: 'A command line interface for developing Anchor projects...'
         }
     ];
 

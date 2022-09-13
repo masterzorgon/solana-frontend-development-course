@@ -17,7 +17,7 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 const Finished = () => {
 
     // allows us to add the wallet account balance to our react function component
-    const [balance, setBalance] = React.useState(0);
+    const [balance, setBalance] = React.useState<number | null>(0);
 
     // we specify which network we want to connect to
     const endpoint = web3.clusterApiUrl('devnet');
@@ -37,7 +37,7 @@ const Finished = () => {
             if (connection && publicKey) {
                 // we get the account info for the user's wallet data store and set the balance in our application's state
                 const info = await connection.getAccountInfo(publicKey);
-                setBalance(info.lamports / web3.LAMPORTS_PER_SOL);
+                setBalance(info!.lamports / web3.LAMPORTS_PER_SOL);
             }
         }
         getInfo();
