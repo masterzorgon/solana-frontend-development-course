@@ -1,3 +1,4 @@
+// dependencies
 import * as React from 'react';
 import { toast } from 'react-toastify';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';

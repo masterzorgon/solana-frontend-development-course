@@ -10,7 +10,7 @@ import { StudentIntroList } from '../../components/serialize/StudentIntroList';
     account data needs to be deserialized using the same 
     layout used to store it in the first place
 
-    When submitting a transaction to a program, the client needs to 
+    when submitting a transaction to a program, the client needs to 
     include all addresses for accounts that will be written to or read from. 
     This means that unlike more traditional client-server architectures, 
     the client needs to have implementation-specific knowledge about 
@@ -24,20 +24,25 @@ import { StudentIntroList } from '../../components/serialize/StudentIntroList';
 
 const Finished = () => {
 
+    // REACT VARIABLES
     const [name, setName] = React.useState('');
     const [thoughts, setThoughts] = React.useState('');
 
+    // SOLANA PROGRAM WE ARE INTERACTING WITH
     const TARGET_PROGRAM_ID = 'HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf';
 
+    // WALLET VARIABLES
     const { connection } = useConnection();
     const { publicKey, sendTransaction } = useWallet();
 
+    // SUBMIT A NEW INTRO
     const createSubmission = async event => {
         event.preventDefault();
         const studentIntro = new StudentIntro(name, thoughts);
         await handleTransactionSubmit(studentIntro);
     };
 
+    // CREATE AND SUBMIT A NEW TRANSACTION
     const handleTransactionSubmit = async studentIntro => {
         // check that the wallet is connected
         if (!connection || !publicKey) {
@@ -54,7 +59,11 @@ const Finished = () => {
             new web3.PublicKey(TARGET_PROGRAM_ID)
         );
         // create a new `Instruction` object containing `keys`, `programId`, `buffer byte data`
+            // `keys` is an array of accounts that the transaction will interact with
+            // `data` is the buffer byte data
+            // `programId` is the smart contract that the transaction will interact with
         const instruction = new web3.TransactionInstruction({
+            // `keys` is an array of objects containing `pubkey`, `isSigner`, and `isWritable` properties
             keys: [
                 {
                     pubkey: publicKey,
@@ -72,6 +81,7 @@ const Finished = () => {
                     isWritable: false
                 }
             ],
+            // data is stored as BPF encoded byte data on the Solana blockchain
             data: buffer,
             programId: new web3.PublicKey(TARGET_PROGRAM_ID),
         })
@@ -90,6 +100,8 @@ const Finished = () => {
         } finally {
             document.getElementById('name').value = '';
             document.getElementById('thoughts').value = '';
+
+            // reset react state variables
             setName('');
             setThoughts('');
         };

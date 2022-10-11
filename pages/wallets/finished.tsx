@@ -13,7 +13,6 @@ require('@solana/wallet-adapter-react-ui/styles.css');
 // imports methods for deriving data from the wallet's data store
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 
-
 const Finished = () => {
 
     // allows us to add the wallet account balance to our react function component
