@@ -18,7 +18,7 @@ The frameworks and tools used to build out these projects were carefully selecte
 # Getting Started
 Navigate to a folder in your local environment and copy/paste the following commands into your terminal:
 ```
-  git clone git@github.com:nathanzebedee/solana-development.git
+  git clone git@github.com:nathanzebedee/solana-frontend-development.git
   cd solana-development
   nvm install 16
   nvm use 16
@@ -28,6 +28,6 @@ Navigate to a folder in your local environment and copy/paste the following comm
 At this point, the repository should be installed to your computer and hosted on your browser at http://localhost:3000.
 
 # Workflow
-For each project, there is a card which contians a brief description of the project, as well as two buttons: "preview" and "starter". 
+For each project, there is a card which contains a brief description of the project, as well as two buttons: "preview" and "starter". 
 * The "preview" button, when clicked, will direct you to a finished version of the project. This is for your reference as you build the project on your own. 
 * The "starter" button, when clicked, will take you to a blank page. The pages labeled "starter.jsx" within your repository are blank files that you will use to build out your own version of the given project.
