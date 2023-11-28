@@ -79,14 +79,14 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
                         >
                             <Dialog.Panel className="relative bg-zinc-200 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full sm:p-6">
                                 <div>
-                                    <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-[#d9cefc] border-2 border-[#9e80ff]">
-                                        <CodeIcon className="h-6 w-6 text-[#9e80ff]" aria-hidden="true" />
+                                    <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-[#eebcb2] border-2 border-[#e44a2a]">
+                                        <CodeIcon className="h-6 w-6 text-helius-orange" aria-hidden="true" />
                                     </div>
                                     <div className="mt-3 text-center sm:mt-5">
                                         <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
                                             Scroll to view requirements
                                         </Dialog.Title>
-                                        <div className="py-2 mt-2 text-left h-40 overflow-scroll">
+                                        <div className="mt-2 text-left h-40 overflow-scroll rounded-lg px-2 pb-2 border-2 border-zinc-300/100">
                                             {requirements.map(requirement => (
                                                 <div className='pt-5'>
                                                     <div className='flex items-center'>
@@ -96,7 +96,7 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
                                                             rel='noreferrer'
                                                             target='_blank'
                                                             key={requirement.title}
-                                                            className='font-bold hover:text-[#fa6ece] transition-all duration-200'
+                                                            className='font-bold hover:text-helius-orange transition-all duration-200'
                                                         >
                                                             {requirement.title}
                                                         </a>
