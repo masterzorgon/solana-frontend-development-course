@@ -19,7 +19,7 @@ const Index = () => {
                     <div className='col-span-2 font-mono text-sm rounded-lg p-5 bg-zinc-800 w-full flex flex-col text-center items-center justify-center'>
                         <h1 className='text-xl sm:text-2xl md:text-3xl font-bold'>Helius Frontend Development Bootcamp</h1>
                         <a href="https://twitter.com/_zebedee_" rel="noreferrer" target="_blank" className='my-4 text-zinc-400 hover:text-helius-orange transition-colors duration-200'>by @_zebedee_</a>
-                        <p>This is a collection of projects that will help you learn the basics of frontend development. The projects are ordered by difficulty, with the easiest projects at the top and the hardest projects at the bottom. The projects are also ordered by the order in which you should complete them. You should start with the first project and work your way down the list.</p>
+                        <p className='leading-6'>This is a collection of projects that will help you learn the basics of frontend development. The projects are ordered by difficulty, with the easiest projects at the top and the hardest projects at the bottom. The projects are also ordered by the order in which you should complete them. You should start with the first project and work your way down the list.</p>
                     </div>
                     {projects.map((project, index) => (
                         <ProjectCard

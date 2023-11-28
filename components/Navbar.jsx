@@ -16,7 +16,7 @@ const Navbar = () => {
                 </a>
             </div>
             <div>
-                <WalletMultiButton className='!bg-[#9e80ff] hover:!bg-[#161b19] transition-all duration-200 !rounded-lg' />
+                <WalletMultiButton className='!bg-helius-orange hover:!bg-black transition-all duration-200 !rounded-lg' />
             </div>
         </nav>
     );
