@@ -8,46 +8,46 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
         {
             title: 'Phantom',
             url: 'https://phantom.app/',
-            description: 'A Solana wallet browser extension...'
+            description: 'A Solana wallet browser extension'
         },
         {
             title: 'SOL',
             url: 'https://solfaucet.com/',
-            description: 'Cryptocurrency native to the Solana blockchain...'
+            description: 'Cryptocurrency native to the Solana blockchain'
         },
         {
             title: 'Node Version Manager',
             url: 'https://github.com/nvm-sh/nvm',
-            description: 'A CLI tool that lets you manage multiple versions of Node.js...'
+            description: 'A CLI tool that lets you manage multiple versions of Node.js'
         },
         {
             title: 'GitHub',
             url: 'https://github.com/',
-            description: 'Software version control platform...'
+            description: 'Software version control platform'
         },
         {
             title: 'VSCode IDE',
             url: 'https://code.visualstudio.com/',
-            description: 'A free and open source code editor...'
+            description: 'A free and open source code editor'
         }, {
             title: 'Yarn',
             url: 'https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable',
-            description: 'A package manager for JavaScript...'
+            description: 'A package manager for JavaScript'
         },
         {
             title: 'Git',
             url: 'https://git-scm.com/',
-            description: 'A version control system...'
+            description: 'A version control system'
         },
         {
             title: 'Solana CLI',
             url: 'https://docs.solana.com/cli/install-solana-cli-tools',
-            description: 'A command line interface for the Solana blockchain...'
+            description: 'A command line interface for the Solana blockchain'
         },
         {
             title: 'Anchor CLI',
             url: 'https://www.anchor-lang.com/docs/installation',
-            description: 'A command line interface for developing Anchor projects...'
+            description: 'A command line interface for developing Anchor projects'
         }
     ];
 
@@ -77,34 +77,42 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative bg-zinc-200 rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full sm:p-6">
+                            <Dialog.Panel className="relative bg-zinc-200 rounded-lg px-4 text-left overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full sm:p-6">
                                 <div>
                                     <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-[#eebcb2] border-2 border-[#e44a2a]">
                                         <CodeIcon className="h-6 w-6 text-helius-orange" aria-hidden="true" />
                                     </div>
-                                    <div className="mt-3 text-center sm:mt-5">
+                                    <div className="text-center mt-3">
                                         <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                                            Scroll to view requirements
+                                            Scroll to view dependencies
                                         </Dialog.Title>
-                                        <div className="mt-2 text-left h-40 overflow-scroll rounded-lg px-2 pb-2 border-2 border-zinc-300/100">
+                                        <div className="mt-4 text-left h-40 overflow-scroll rounded-lg px-2 pb-2 border-2 border-zinc-300/100">
                                             {requirements.map(requirement => (
-                                                <div className='pt-5'>
-                                                    <div className='flex items-center'>
-                                                        <LinkIcon width='16px' className='mr-1' />
-                                                        <a
-                                                            href={requirement.url}
-                                                            rel='noreferrer'
-                                                            target='_blank'
-                                                            key={requirement.title}
-                                                            className='font-bold hover:text-helius-orange transition-all duration-200'
+                                                <a
+                                                    href={requirement.url}
+                                                    rel='noreferrer'
+                                                    target='_blank'
+                                                    key={requirement.title}
+                                                >
+                                                    <div className='group border-2 border-[#e49f91] bg-[#eebcb2] rounded-md my-4 p-2'>
+                                                        <div    
+                                                            className='flex items-center'
                                                         >
-                                                            {requirement.title}
-                                                        </a>
+                                                            <LinkIcon
+                                                                width='16px'
+                                                                className='mr-1 group-hover:text-helius-orange transition-all duration-200'
+                                                            />
+                                                            <span
+                                                                className='font-bold group-hover:text-helius-orange transition-all duration-200'
+                                                            >
+                                                                {requirement.title}
+                                                            </span>
+                                                        </div>
+                                                        <p className='font-base text-sm transition-all duration-200 text-zinc-600'>
+                                                            {requirement.description}
+                                                        </p>
                                                     </div>
-                                                    <p className='font-light italic text-sm'>
-                                                        {requirement.description}
-                                                    </p>
-                                                </div>
+                                                </a>
                                             ))}
                                         </div>
                                     </div>
@@ -112,10 +120,10 @@ const Requirements = ({ displayRequirements, setDisplayRequirements }) => {
                                 <div className="mt-5 sm:mt-6">
                                     <button
                                         type="button"
-                                        className="inline-flex justify-center w-full rounded-md border-2 border-black shadow-sm px-4 py-2 bg-black hover:bg-transparent hover:text-black text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm transition-all duration-200"
+                                        className="inline-flex justify-center w-full rounded-md border-2 border-black shadow-sm px-4 py-2 bg-black hover:bg-zinc-800 text-base font-medium text-white sm:text-sm transition-all duration-200"
                                         onClick={() => setDisplayRequirements(false)}
                                     >
-                                        Go back to dashboard
+                                        Close
                                     </button>
                                 </div>
                             </Dialog.Panel>
