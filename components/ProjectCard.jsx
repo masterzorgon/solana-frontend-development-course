@@ -2,7 +2,7 @@ import { CodeIcon, BeakerIcon } from '@heroicons/react/outline';
 
 const ProjectCard = ({ project, displayRequirements, setDisplayRequirements, index }) => (
     <div className='relative bg-helius-orange rounded-lg'>
-        <div key={project.id} className='font-mono text-sm rounded-lg h-60 p-5 bg-[#2a302f] col-span-1  flex flex-col justify-between transition-all duration-200 hover:translate-x-1 hover:translate-y-1'>
+        <div key={project.id} className='font-mono text-sm rounded-lg h-60 p-5 bg-zinc-800 col-span-1 flex flex-col justify-between transition-all duration-200 hover:translate-x-1 hover:translate-y-1'>
             <div className='flex justify-between text-xl'>
                 <div>
                     <BeakerIcon />
@@ -26,7 +26,7 @@ const ProjectCard = ({ project, displayRequirements, setDisplayRequirements, ind
                 </div>
                 <div>
                     <button
-                        className='flex items-center hover:text-[#bfaef7] transition-all duration-200 tracking-wide'
+                        className='flex items-center hover:text-helius-orange transition-all duration-200 tracking-wide'
                         onClick={() => setDisplayRequirements(!displayRequirements)}
                     >
                         requirements

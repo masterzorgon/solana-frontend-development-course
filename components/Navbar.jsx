@@ -2,7 +2,7 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 const Navbar = () => {
     return (
-        <nav className='p-4 flex justify-between items-center bg-[#2a302f]'>
+        <nav className='p-4 flex justify-between items-center bg-zinc-800'>
             <div>
                 <a href="/" className='text-white hover:text-[#eb54bc] transition-all duration-200 flex items-center text-5xl'>
                     <img
