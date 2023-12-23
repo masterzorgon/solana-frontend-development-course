@@ -60,20 +60,20 @@ const Finished = () => {
                                         </h2>
                                         {/* button component for connecting to solana wallet */}
                                         <WalletMultiButton
-                                            className='!bg-[#9e80ff] !rounded-xl hover:!bg-[#161b19] transition-all duration-200'
+                                            className='!bg-helius-orange !rounded-xl hover:!bg-[#161b19] transition-all duration-200'
                                         />
                                     </div>
                                     <div className='mt-8 bg-[#222524] border-2 border-gray-500 rounded-lg p-2'>
                                         <ul className='p-2'>
                                             <li className='flex justify-between'>
                                                 <p className='tracking-wider'>Wallet is connected...</p>
-                                                <p className='text-[#80ebff] italic font-semibold'>
+                                                <p className='text-helius-orange italic font-semibold'>
                                                     {publicKey ? 'yes' : 'no'}
                                                 </p>
                                             </li>
                                             <li className='text-sm mt-4 flex justify-between'>
                                                 <p className='tracking-wider'>Balance...</p>
-                                                <p className='text-[#80ebff] italic font-semibold'>
+                                                <p className='text-helius-orange italic font-semibold'>
                                                     {balance}
                                                 </p>
                                             </li>

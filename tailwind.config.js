@@ -14,7 +14,10 @@ module.exports = {
       },
       animation: {
         'spin': 'spin 3s linear infinite',
-      }
+      },
+      colors: {
+        "helius-orange": "#e44a2a",
+      },
     },
   },
   plugins: [],
