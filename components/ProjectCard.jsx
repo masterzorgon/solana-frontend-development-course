@@ -9,7 +9,7 @@ const ProjectCard = ({ project, displayRequirements, setDisplayRequirements, ind
                         {index < 10 ? `0${index + 1}` : index + 1}
                     </h2>
                 </div>
-                <span className='font-light italic tracking-wide'>{project.title}</span>
+                <span className='font-light tracking-wide'>{project.title}</span>
             </div>
             <p>{project.description}</p>
             <div className='mt-8 font-semibold flex justify-between'>
