@@ -2,6 +2,8 @@
 Hey there! This repository was 
 Hey Baylor Bears! This repository was designed by [Nathan Galindo](https://twitter.com/_zebedee_) on behalf of [Helius](https://www.helius.dev/). It is a course that is made up of a series of projects to help you get started developing frontend applications on [Solana](https://solana.com/). Why Solana? Because Solana is a third-generation protocol with incredibly high throughput and astonishingly low transaction fees, making it an ideal blockchain for builders to hack out the next generation of the internet!
 
+<img width="1160" alt="Screenshot 2024-01-04 at 9 24 00 AM" src="https://github.com/masterzorgon/solana-frontend-development-course/assets/155211932/c7f3aef9-fd8a-4e9f-8fa5-54231ce55eea">
+
 # Tech Stack
 This course focuses on front-end development, and challenges you to build small applications using industry standard front-end technologies as well as some web3 frameworks to interact with the [Solana JSON RPC API](https://docs.solana.com/developing/clients/jsonrpc-api?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCZyftNFV4i4Sygxkr6LdPazw2sLMPyhQbVqFID-yy8QSqf81dxJHUoaAk2ZEALw_wcB). Listed below are the main frameworks and tools you will be working with:
 
