@@ -14,10 +14,8 @@ require('@solana/wallet-adapter-react-ui/styles.css');
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 
 const Finished = () => {
-
     // allows us to add the wallet account balance to our react function component
     const [balance, setBalance] = React.useState<number | null>(0);
-
     // we specify which network we want to connect to
     const endpoint = web3.clusterApiUrl('devnet');
     // we specify which wallets we want our wallet adapter to support
@@ -63,6 +61,7 @@ const Finished = () => {
                                             className='!bg-helius-orange !rounded-xl hover:!bg-[#161b19] transition-all duration-200'
                                         />
                                     </div>
+
                                     <div className='mt-8 bg-[#222524] border-2 border-gray-500 rounded-lg p-2'>
                                         <ul className='p-2'>
                                             <li className='flex justify-between'>
@@ -71,6 +70,7 @@ const Finished = () => {
                                                     {publicKey ? 'yes' : 'no'}
                                                 </p>
                                             </li>
+                                            
                                             <li className='text-sm mt-4 flex justify-between'>
                                                 <p className='tracking-wider'>Balance...</p>
                                                 <p className='text-helius-orange italic font-semibold'>
