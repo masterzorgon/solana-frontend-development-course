@@ -1,11 +1,10 @@
-import { CodeIcon, BeakerIcon } from '@heroicons/react/outline';
+import { CodeIcon } from '@heroicons/react/outline';
 
 const ProjectCard = ({ project, displayRequirements, setDisplayRequirements, index }) => (
     <div className='relative bg-helius-orange rounded-lg cols-span-1'>
-        <div key={project.id} className='font-mono text-sm rounded-lg h-60 p-5 bg-zinc-800 justify-between transition-all duration-200 hover:translate-x-1 hover:translate-y-1'>
+        <div key={project.id} className='font-mono text-sm rounded-lg h-60 p-5 bg-zinc-800 flex flex-col justify-between transition-all duration-200 hover:translate-x-1 hover:translate-y-1'>
             <div className='flex justify-between text-xl'>
                 <div>
-                    <BeakerIcon />
                     <h2 className='text-helius-orange font-extrabold'>
                         {index < 10 ? `0${index + 1}` : index + 1}
                     </h2>
