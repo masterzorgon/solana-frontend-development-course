@@ -11,7 +11,7 @@ const RenderedComponent = (props: RenderedComponentProps) => {
                 <button
                     type='submit'
                     disabled={props.validation === undefined}
-                    className='bg-[#fa6ece] rounded-lg py-1 sm:py-2 px-4 font-semibold transition-all duration-200 border-2 border-transparent hover:border-[#fa6ece] disabled:opacity-50 disabled:hover:bg-[#fa6ece] hover:bg-transparent disabled:cursor-not-allowed'
+                    className='bg-helius-orange rounded-lg py-1 sm:py-2 px-4 font-semibold transition-all duration-200 border-2 border-transparent hover:border-helius-orange disabled:opacity-50 disabled:hover:bg-[#fa6ece] hover:bg-transparent disabled:cursor-not-allowed'
                 >
                     {props.buttonText}
                 </button>
