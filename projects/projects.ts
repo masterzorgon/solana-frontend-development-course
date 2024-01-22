@@ -1,4 +1,16 @@
-export const projects = [
+interface Href {
+    finished: string;
+    starter: string;
+}
+
+interface Project {
+    season: string;
+    title: string;
+    description: string;
+    href: Href
+}
+
+export const projects: Project[] = [
     {
         season: 'season-one',
         title: 'wallets',
@@ -42,15 +54,6 @@ export const projects = [
         href: {
             finished: '/tokens/finished',
             starter: '/tokens/starter',
-        }
-    },
-    {
-        season: 'season-two',
-        title: 'hello',
-        description: 'You will write and deploy a "Hello, World" Solana program, then create a simple UI to interact with it.',
-        href: {
-            finished: '/helloworld/finished',
-            starter: '/helloworld/starter',
         }
     },
     {
