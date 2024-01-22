@@ -23,6 +23,7 @@ const Index = () => {
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-7xl'>
                     {projects.map((project, index) => (
                         <ProjectCard
+                            key={index}
                             index={index}
                             project={project}
                             displayRequirements={displayRequirements}
