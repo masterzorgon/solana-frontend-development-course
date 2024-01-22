@@ -4,7 +4,6 @@ interface Href {
 }
 
 interface Project {
-    season: string;
     title: string;
     description: string;
     href: Href
@@ -12,7 +11,6 @@ interface Project {
 
 export const projects: Project[] = [
     {
-        season: 'season-one',
         title: 'wallets',
         description: 'You will use solana/web3.js to implement the Solana wallet adapter in an application.',
         href: {
@@ -21,7 +19,6 @@ export const projects: Project[] = [
         }
     },
     {
-        season: 'season-one',
         title: 'faucet',
         description: 'You will build a SOL faucet that you will use to fund your Phantom browser wallet.',
         href: {
@@ -30,7 +27,6 @@ export const projects: Project[] = [
         }
     },
     {
-        season: 'season-one',
         title: 'send sol',
         description: 'You will create an application that allows you to send SOL to another wallet on the Solana devnet.',
         href: {
@@ -39,7 +35,6 @@ export const projects: Project[] = [
         }
     },
     {
-        season: 'season-one',
         title: 'serialize',
         description: 'Using Borsh, you will serialize custom instruction data to interact with an existing Solana smart contract.',
         href: {
@@ -48,7 +43,6 @@ export const projects: Project[] = [
         }
     },
     {
-        season: 'season-one',
         title: 'tokens',
         description: 'You will use the @solana/spl-token library to create Token Mints, create SPL-tokens, and burn tokens.',
         href: {
@@ -57,12 +51,19 @@ export const projects: Project[] = [
         }
     },
     {
-        season: 'season-two',
+        title: 'nft minter',
+        description: 'Create an compressed NFT minting machine using Helius APIs.',
+        href: {
+            finished: '/minter/finished',
+            starter: '/minter/starter',
+        }
+    },
+    {
         title: 'movies',
         description: 'You will write and deploy a Solana program which buffer byte data. You will then create a UI to interact with it.',
         href: {
             finished: '/movies/finished',
             starter: '/movies/starter',
         }
-    }
+    },
 ];
