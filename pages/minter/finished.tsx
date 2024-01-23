@@ -1,5 +1,7 @@
 // imports methods relevant to the react framework
 import * as React from 'react';
+// throws notifications for user friendly error handling
+import { toast } from 'react-toastify';
 // imports methods for deriving data from the wallet's data store
 import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 // imports icons
@@ -7,26 +9,22 @@ import { ExternalLinkIcon } from '@heroicons/react/outline';
 
 const nftImageUrl = "https://nathan-galindo.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-2.614ae0c9.jpg&w=640&q=75";
 const nftExternalUrl = "https://nathan-galindo.vercel.app/";
-        
+
 const Finished = () => {
     const [apiUrl, setApiUrl] = React.useState<string>("");
-    const [recentNFT, setRecentNFT] = React.useState<string>("");
-    const [nftImageSrc, setNftImageSrc] = React.useState<string>("");
-    const [txSig, setTxSig] = React.useState<string>("");
+    const [nft, setNft] = React.useState<string>("");
+    const [nftImage, setNftImage] = React.useState<string>("");
 
     // get user info from wallet provider
     const { connection } = useConnection();
     const { publicKey } = useWallet();
 
-    React.useEffect(() => {
-        setApiUrl(
-            connection.rpcEndpoint.includes("devnet")
-                ? "https://devnet.helius-rpc.com/?api-key=23aabe59-1cbe-4b31-91da-0ae23a590bdc"
-                : "https://mainnet.helius-rpc.com/?api-key=23aabe59-1cbe-4b31-91da-0ae23a590bdc"
-        );
-    }, [connection]);
+    // create compressed nft
+    const mintCompressedNft = async (event: { preventDefault: () => void }) => {
+        // prevent react app from resetting
+        event.preventDefault();
 
-    const mintCompressedNft = async () => {
+        // make api call to create cNFT
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
@@ -56,16 +54,24 @@ const Finished = () => {
         });
 
         const { result } = await response.json();
+        console.log("RESULT", result);
 
-        setRecentNFT(result.assetId);
+        if (!result) {
+            toast.error("Request failed")
+            throw "Request failed"
+        }
 
-        return {
-            result: result,
-            message: `Minted asset: ${result.assetId}`
-        };
+        setNft(result.assetId);
+
+        fetchNFT(result.assetId, event);
     };
 
-    const fetchNFT = async () => {
+    // fetch nft after it's minted
+    const fetchNFT = async (assetId: string, event: { preventDefault: () => void }) => {
+        // prevent app from reloading
+        event.preventDefault();
+
+        // api call to fetch nft
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
@@ -76,60 +82,50 @@ const Finished = () => {
                 id: 'my-id',
                 method: 'getAsset',
                 params: {
-                    id: recentNFT
+                    id: assetId
                 }
             })
         });
 
+        // extrapolate api response
         const { result } = await response.json();
 
-        setNftImageSrc(result.content.links.image);
+        // set nft image in state variable
+        setNftImage(result.content.links.image);
 
+        // return api result
         return { result };
     };
 
     const outputs = [
         {
-            title: 'Transaction Signature...',
-            dependency: txSig,
-            href: `https://explorer.solana.com/tx/${txSig}?cluster=devnet`,
+            title: 'Asset ID...',
+            dependency: nft,
+            href: `https://xray.helius.xyz/token/${nft}?network=devnet`,
         }
     ];
 
+    // set api url onload
+    React.useEffect(() => {
+        setApiUrl(
+            connection.rpcEndpoint.includes("devnet")
+                ? "https://devnet.helius-rpc.com/?api-key=23aabe59-1cbe-4b31-91da-0ae23a590bdc"
+                : "https://mainnet.helius-rpc.com/?api-key=23aabe59-1cbe-4b31-91da-0ae23a590bdc"
+        );
+    }, [connection]);
+
     return (
-        // <>
-        //     <button
-        //         className='border text-white'
-        //         onClick={mintCompressedNft}
-        //     >
-        //         mint nft
-        //     </button>
-
-        //     <button
-        //         className='border text-white'
-        //         onClick={fetchNFT}
-        //     >
-        //         get nft
-        //     </button>
-
-        //     <img
-        //         width={200}
-        //         height={200}
-        //         src={nftImageSrc}
-        //      /> 
-        // </>
-
         <main className='max-w-7xl grid grid-cols-1 sm:grid-cols-6 gap-4 p-4 text-white'>
-            <form onSubmit={event => fundWallet(event)} className='rounded-lg min-h-content bg-[#2a302f] p-4 sm:col-span-6 lg:col-start-2 lg:col-end-6'>
+            <form onSubmit={event => mintCompressedNft(event)} className='rounded-lg min-h-content bg-[#2a302f] p-4 sm:col-span-6 lg:col-start-2 lg:col-end-6'>
                 <div className='flex justify-between items-center'>
                     <h2 className='text-lg sm:text-2xl font-semibold'>
-                    Faucet 🚰
+                    cNFT Minter 🖼️
                     </h2>
                     <button
                         type='submit'
                         className='bg-helius-orange rounded-lg py-1 sm:py-2 px-4 font-semibold transition-all duration-200 border-2 border-transparent hover:border-helius-orange disabled:opacity-50 disabled:hover:bg-[#fa6ece] hover:bg-transparent disabled:cursor-not-allowed'
                     >
-                        Fund
+                        Mint
                     </button>
                 </div>
                 
@@ -153,6 +149,21 @@ const Finished = () => {
                             </li>
                         ))}
                     </ul>
+                </div>
+
+                <div className='mt-8 bg-[#222524] border-2 border-gray-500 rounded-lg p-4 h-[400px] flex justify-center items-center'>
+                        {
+                        nftImage 
+                            ?
+                            <img 
+                                width={300}
+                                height={300}
+                                src={nftImage}
+                                className='rounded-lg border-2 border-gray-500'
+                            />
+                            :
+                            <p className='border-2 border-gray-500 text-gray-500 p-2 rounded-lg'>NFT Image Goes Here</p>
+                        }
                 </div>
             </form>
         </main>
