@@ -97,6 +97,7 @@ const Finished = () => {
         return { result };
     };
 
+    // display function outputs to ui
     const outputs = [
         {
             title: 'Asset ID...',
@@ -123,10 +124,12 @@ const Finished = () => {
                     </h2>
                     <button
                         type='submit'
-                        className='bg-helius-orange rounded-lg py-1 sm:py-2 px-4 font-semibold transition-all duration-200 border-2 border-transparent hover:border-helius-orange disabled:opacity-50 disabled:hover:bg-[#fa6ece] hover:bg-transparent disabled:cursor-not-allowed'
+                        className='bg-helius-orange rounded-lg py-1 sm:py-2 px-4 font-semibold transition-all duration-200 border-2 border-transparent hover:border-helius-orange disabled:opacity-50 disabled:hover:bg-helius-orange hover:border-transparent disabled:cursor-not-allowed'
+                        disabled={!publicKey || !connection}
                     >
                         Mint
                     </button>
+
                 </div>
                 
                 <div className='text-sm font-semibold mt-8 bg-[#222524] border-2 border-gray-500 rounded-lg p-2'>
@@ -153,7 +156,7 @@ const Finished = () => {
 
                 <div className='mt-8 bg-[#222524] border-2 border-gray-500 rounded-lg p-4 h-[400px] flex justify-center items-center'>
                         {
-                        nftImage 
+                        nftImage // if nftImage exists, render image, otherwise render text
                             ?
                             <img 
                                 width={300}
