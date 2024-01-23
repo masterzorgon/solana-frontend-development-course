@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 import RenderedComponent from '../../components/RenderedComponent';
 
 const Finished = () => {
-
     // id of the rust program you deployed to the devnet
     const programId = new web3.PublicKey("82Xbj9BUXPkbCsRZnQoJbRtsrqKVYDiRHe2tW2pZ5Xmv");
 
