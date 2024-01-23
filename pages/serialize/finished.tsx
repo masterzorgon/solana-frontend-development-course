@@ -54,15 +54,19 @@ const Finished: FC = () => {
             toast.error('Please connect your wallet.');
             return;
         }
+
         // call `serialize` on `StudentIntro` to get buffer byte data
         const buffer = studentIntro.serialize();
+
         // create a new `Transaction` object
         const transaction = new web3.Transaction();
+
         // get all accounts that the transaction will interact with
         const [ pda ] = web3.PublicKey.findProgramAddressSync(
             [ publicKey.toBuffer() ],
             new web3.PublicKey(TARGET_PROGRAM_ID)
         );
+
         // create a new `Instruction` object containing `keys`, `programId`, `buffer byte data`
             // `keys` is an array of accounts that the transaction will interact with
             // `data` is the buffer byte data
@@ -90,17 +94,17 @@ const Finished: FC = () => {
             data: buffer,
             programId: new web3.PublicKey(TARGET_PROGRAM_ID),
         })
+
         // add the `Instruction` to the `Transaction`
         transaction.add(instruction);
+
         // use `sendTransaction`, passing in the `Transaction` and `connection` objects
         try {
             const response = await sendTransaction(transaction, connection);
             console.log(`Transaction submitted: https://explorer.solana.com/tx/${response}?cluster=devnet`)
             toast.success('Transaction was successful!');
         } catch (error: any) {
-            if (error.message !== 'User rejected the request.') {
-                toast.error('Transaction failed!');
-            }
+            toast.error('Transaction failed!');
             console.log('Error:', error);
         } finally {
             // reset react state variables
