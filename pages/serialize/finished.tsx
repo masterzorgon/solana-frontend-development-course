@@ -93,7 +93,7 @@ const Finished: FC = () => {
             // data is stored as BPF encoded byte data on the Solana blockchain
             data: buffer,
             programId: new web3.PublicKey(TARGET_PROGRAM_ID),
-        })
+        });
 
         // add the `Instruction` to the `Transaction`
         transaction.add(instruction);
@@ -202,13 +202,13 @@ const Finished: FC = () => {
                                     page > 1 &&
                                     <button
                                         onClick={() => setPage(page - 1)}
-                                        className='bg-[#fa6ece] rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
+                                        className='bg-helius-orange rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-helius-orange'
                                     >
                                         Previous
                                     </button>
                                 }
                             </div>
-                            <div className=''>
+                            <div>
                                 {
                                     StudentIntroCoordinator.accounts.length > page * 5 &&
                                     <button
