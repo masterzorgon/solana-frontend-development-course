@@ -21,12 +21,14 @@ export class StudentIntro {
         borsh.str('message'),
     ]);
 
+    // serialize info when we send it to the blockchain
     serialize(): Buffer {
         const buffer = Buffer.alloc(1000);
         this.borshInstructionSchema.encode({ ...this, variant: 0 }, buffer);
         return buffer.slice(0, this.borshInstructionSchema.getSpan(buffer));
     };
 
+    // deserialize info when we retrieve it from the blockchain
     static deserialize(buffer?: Buffer): StudentIntro | null {
         if (!buffer) {
             return null;
