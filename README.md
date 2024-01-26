@@ -4,6 +4,9 @@ Hey Baylor Bears! This repository was designed by [Nathan Galindo](https://twitt
 
 <img width="1165" alt="Screenshot 2024-01-04 at 9 24 40 AM" src="https://github.com/masterzorgon/solana-frontend-development-course/assets/155211932/c841b9be-3e26-4a3a-bf92-856812a3d27e">
 
+# Video Series
+This application is paired with a video series what walks you through each project! [Click this link](https://www.youtube.com/watch?v=8azRe9PRLg0&list=PLMZny7wGLM6w4t7pMGATxFTjjMduTsEiF) to follow along.
+
 # Tech Stack
 This course focuses on front-end development, and challenges you to build small applications using industry standard front-end technologies as well as some web3 frameworks to interact with the [Solana JSON RPC API](https://docs.solana.com/developing/clients/jsonrpc-api?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCZyftNFV4i4Sygxkr6LdPazw2sLMPyhQbVqFID-yy8QSqf81dxJHUoaAk2ZEALw_wcB). Listed below are the main frameworks and tools you will be working with:
 
@@ -32,3 +35,9 @@ At this point, the repository should be installed to your computer and hosted on
 For each project, there is a card which contains a brief description of the project, as well as two buttons: "preview" and "starter". 
 * The "preview" button, when clicked, will direct you to a finished version of the project. This is for your reference as you build the project on your own. 
 * The "starter" button, when clicked, will take you to a blank page. The pages labeled "starter.jsx" within your repository are blank files that you will use to build out your own version of the given project.
+
+# Credits
+If you find these learning materials helpful, you can help me out in the following ways:
+* By giving this repository a star 🌟
+* By giving me a follow on X: [@_zebedee_](https://twitter.com/_zebedee_)
+* By learning more about Helius via our website: [helius.dev](https://www.helius.dev/)
