@@ -7,6 +7,9 @@ Hey Baylor Bears! This repository was designed by [Nathan Galindo](https://twitt
 # Video Series
 This application is paired with a video series what walks you through each project! [Click this link](https://www.youtube.com/watch?v=8azRe9PRLg0&list=PLMZny7wGLM6w4t7pMGATxFTjjMduTsEiF) to follow along.
 
+![image](https://github.com/masterzorgon/solana-frontend-development-course/assets/155211932/5f3bd590-c19d-4d1f-954e-6bb0aa4fd767)
+
+
 # Tech Stack
 This course focuses on front-end development, and challenges you to build small applications using industry standard front-end technologies as well as some web3 frameworks to interact with the [Solana JSON RPC API](https://docs.solana.com/developing/clients/jsonrpc-api?gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCZyftNFV4i4Sygxkr6LdPazw2sLMPyhQbVqFID-yy8QSqf81dxJHUoaAk2ZEALw_wcB). Listed below are the main frameworks and tools you will be working with:
 
