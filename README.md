@@ -21,8 +21,8 @@ Navigate to a folder in your local environment and copy/paste the following comm
 ```
   git clone git@github.com:masterzorgon/solana-frontend-development-course.git
   cd solana-frontend-development-course
-  nvm install 16
-  nvm use 16
+  nvm install 20
+  nvm use 20
   yarn
   yarn dev
 ```
