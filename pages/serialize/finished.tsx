@@ -3,8 +3,8 @@ import * as web3 from '@solana/web3.js';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { toast } from 'react-toastify';
 
-import { StudentIntro } from '../../models/serialize/StudentIntro';
-import { StudentIntroCoordinator } from '../../scripts/serialize/StudentIntroCoordinator'
+import { StudentIntroReference } from '../../models/serialize/StudentIntroReference';
+import { StudentIntroCoordinatorReference } from '../../scripts/serialize/StudentIntroCoordinatorReference'
 
 /* 
     account data needs to be deserialized using the same 
@@ -29,7 +29,7 @@ const Finished: FC = () => {
     const [thoughts, setThoughts] = React.useState('');
 
     // INTRO LIST STATE VARIABLES
-    const [studentIntros, setStudentIntros] = React.useState<StudentIntro[]>([]);
+    const [studentIntros, setStudentIntros] = React.useState<StudentIntroReference[]>([]);
     const [page, setPage] = React.useState(1)
     const [search, setSearch] = React.useState('')
 
@@ -43,12 +43,12 @@ const Finished: FC = () => {
     // SUBMIT A NEW INTRO
     const createSubmission = async (event: { preventDefault: () => void }) => {
         event.preventDefault();
-        const studentIntro = new StudentIntro(name, thoughts);
+        const studentIntro = new StudentIntroReference(name, thoughts);
         await handleTransactionSubmit(studentIntro);
     };
 
     // CREATE AND SUBMIT A NEW TRANSACTION
-    const handleTransactionSubmit = async (studentIntro: StudentIntro) => {
+    const handleTransactionSubmit = async (studentIntro: StudentIntroReference) => {
         // check that the wallet is connected
         if (!connection || !publicKey) {
             toast.error('Please connect your wallet.');
@@ -114,7 +114,7 @@ const Finished: FC = () => {
     };
 
     React.useEffect(() => {
-        StudentIntroCoordinator.fetchPage(
+        StudentIntroCoordinatorReference.fetchPage(
             connection,
             page,
             5,
@@ -180,7 +180,7 @@ const Finished: FC = () => {
                     <div>
                         <div className='mt-6'>
                             {
-                                studentIntros.map((studentIntro: StudentIntro, index: number) => (
+                                studentIntros.map((studentIntro: StudentIntroReference, index: number) => (
                                     (studentIntro.name && studentIntro.message) &&
                                     <div
                                         key={`${studentIntro.name}-${index}`}
@@ -210,7 +210,7 @@ const Finished: FC = () => {
                             </div>
                             <div>
                                 {
-                                    StudentIntroCoordinator.accounts.length > page * 5 &&
+                                    StudentIntroCoordinatorReference.accounts.length > page * 5 &&
                                     <button
                                         onClick={() => setPage(page + 1)}
                                         className='bg-helius-orange rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-helius-orange'

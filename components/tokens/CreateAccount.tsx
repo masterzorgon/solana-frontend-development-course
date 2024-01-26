@@ -7,7 +7,7 @@ import { CreateAccountProps } from '../../interfaces/tokens';
 import RenderedComponent from '../RenderedComponent';
 
 const CreateAccount = (props: CreateAccountProps) => {
-
+    
     const createAccount = async (event: { preventDefault: () => void }) => {
         event.preventDefault();
 
