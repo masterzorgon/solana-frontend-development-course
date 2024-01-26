@@ -21,7 +21,7 @@ const ProjectCard = ({ project, displayRequirements, setDisplayRequirements, ind
                         starter
                     </a>
                 </div>
-                <div>
+                <div className='block sm:hidden lg:block'>
                     <button
                         className='flex items-center hover:text-helius-orange transition-all duration-200 tracking-wide'
                         onClick={() => setDisplayRequirements(!displayRequirements)}

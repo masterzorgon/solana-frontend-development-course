@@ -1,6 +1,16 @@
-export const projects = [
+interface Href {
+    finished: string;
+    starter: string;
+}
+
+interface Project {
+    title: string;
+    description: string;
+    href: Href
+}
+
+export const projects: Project[] = [
     {
-        season: 'season-one',
         title: 'wallets',
         description: 'You will use solana/web3.js to implement the Solana wallet adapter in an application.',
         href: {
@@ -9,7 +19,6 @@ export const projects = [
         }
     },
     {
-        season: 'season-one',
         title: 'faucet',
         description: 'You will build a SOL faucet that you will use to fund your Phantom browser wallet.',
         href: {
@@ -18,7 +27,6 @@ export const projects = [
         }
     },
     {
-        season: 'season-one',
         title: 'send sol',
         description: 'You will create an application that allows you to send SOL to another wallet on the Solana devnet.',
         href: {
@@ -27,7 +35,6 @@ export const projects = [
         }
     },
     {
-        season: 'season-one',
         title: 'serialize',
         description: 'Using Borsh, you will serialize custom instruction data to interact with an existing Solana smart contract.',
         href: {
@@ -36,7 +43,6 @@ export const projects = [
         }
     },
     {
-        season: 'season-one',
         title: 'tokens',
         description: 'You will use the @solana/spl-token library to create Token Mints, create SPL-tokens, and burn tokens.',
         href: {
@@ -45,21 +51,19 @@ export const projects = [
         }
     },
     {
-        season: 'season-two',
-        title: 'hello',
-        description: 'You will write and deploy a "Hello, World" Solana program, then create a simple UI to interact with it.',
+        title: 'nft minter',
+        description: 'Create an compressed NFT minting machine using Helius APIs.',
         href: {
-            finished: '/helloworld/finished',
-            starter: '/helloworld/starter',
+            finished: '/minter/finished',
+            starter: '/minter/starter',
         }
     },
     {
-        season: 'season-two',
         title: 'movies',
         description: 'You will write and deploy a Solana program which buffer byte data. You will then create a UI to interact with it.',
         href: {
             finished: '/movies/finished',
             starter: '/movies/starter',
         }
-    }
+    },
 ];
