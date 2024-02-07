@@ -6,17 +6,20 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 
 const Finished = () => {
-
+    // react state variables
     const [rating, setRating] = React.useState<number>(0);
     const [description, setDescription] = React.useState<string>("");
     const [title, setTitle] = React.useState<string>("");
     const [txSig, setTxSig] = React.useState<string>("");
 
+    // custom on-chain program we are interacting with
     const programId = new web3.PublicKey('GWenWxNqXEEM4Cue4jRoYrGuyGb3FTAGu4fZGSwpMU5P');
 
+    // grab user's wallet details
     const { connection } = useConnection();
     const { publicKey, sendTransaction } = useWallet();
 
+    // define schema of data we're serializing and sending to the blockchain
     const movieInstructionLayout = borsh.struct([
         borsh.u8('variant'),
         borsh.str('title'),
@@ -24,16 +27,21 @@ const Finished = () => {
         borsh.str('description')
     ]);
 
+    // function to send our input to the on-chain program
     const sendMovieReview = async (event: { preventDefault: () => void; }) => {
+        // prevent app refresh when this function runs
         event.preventDefault();
 
+        // check if user's wallet is connected
         if (!publicKey || !connection) {
             toast.error('Please connect your wallet');
             throw 'Please connect your wallet';
         };
 
+        // create a buffer to store user input
         let buffer = Buffer.alloc(1000);
 
+        // create unique movie title
         const movieTitle = `${title} - (${(Math.random() * 1000000).toString().slice(0, 4)})`;
 
         movieInstructionLayout.encode({
@@ -43,14 +51,19 @@ const Finished = () => {
             description: description
         }, buffer);
 
+        // insert user's input into the buffer we created
         buffer = buffer.slice(0, movieInstructionLayout.getSpan(buffer));
 
+        // derive the address of the account we will store this info in on-chain
         const [pda] = await web3.PublicKey.findProgramAddress(
             [publicKey!.toBuffer(), Buffer.from(movieTitle)],  
             programId
         );
 
+        // initialize a transaction object (empty)
         const transaction = new web3.Transaction();
+
+        // create the instruction (we will add to the transaction object)
         const instruction = new web3.TransactionInstruction({
             programId: programId,
             data: buffer,
@@ -73,21 +86,24 @@ const Finished = () => {
             ]
         });
 
+        // add instruction to transaction object
         transaction.add(instruction);
 
-        try {
+
+        try { // send transaction to blockchain
             const signature = await sendTransaction(transaction, connection);
             setTxSig(signature);
             console.log(`https://explorer.solana.com/tx/${signature}?cluster=devnet`);
-        } catch (error) {
+        } catch (error) { // throw error messages if request fails
             console.error(error);
-        } finally {
+        } finally { // reset state variables in any case
             setDescription("");
             setRating(0);
             setTitle("");
         }
     };
 
+    // define repetitive ui elements
     const outputs = [
         {
             title: 'Transaction Signature...',
