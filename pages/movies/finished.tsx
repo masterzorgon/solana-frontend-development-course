@@ -20,7 +20,7 @@ const Finished = () => {
     const { publicKey, sendTransaction } = useWallet();
 
     // define schema of data we're serializing and sending to the blockchain
-    const movieInstructionLayout = borsh.struct([
+    const movieReviewLayout = borsh.struct([
         borsh.u8('variant'),
         borsh.str('title'),
         borsh.u8('rating'),
@@ -45,7 +45,7 @@ const Finished = () => {
         const movieTitle = `${title} - (${(Math.random() * 1000000).toString().slice(0, 4)})`;
 
         // encodes the provided data into a binary format according to the movieInstructionLayout's schema and writes the encoded data into the buffer.
-        movieInstructionLayout.encode({
+        movieReviewLayout.encode({
             variant: 0,
             title: movieTitle,
             rating: rating,
@@ -54,7 +54,7 @@ const Finished = () => {
 
 
         // adjust the buffer size in case our data has any unused space (to avoid paying hire rent / bloating blockchain space)
-        buffer = buffer.slice(0, movieInstructionLayout.getSpan(buffer));
+        buffer = buffer.slice(0, movieReviewLayout.getSpan(buffer));
 
         // derive the address of the account we will store this info in on-chain
         const [pda] = await web3.PublicKey.findProgramAddress(
@@ -119,13 +119,13 @@ const Finished = () => {
             <section className='grid grid-cols-1 sm:grid-cols-6 gap-4 p-4'>
                 <form className='rounded-lg min-h-content p-4 bg-[#2a302f] sm:col-span-6 lg:col-start-2 lg:col-end-6'>
                     <div className='flex justify-between items-center'>
-                        <h2 className='font-bold text-2xl text-[#fa6ece]'>
-                            Movie Review ✨
+                        <h2 className='font-bold text-2xl text-helius-orange'>
+                            Movie Review 🎬
                         </h2>
                         <button
                             disabled={!title || !description || !rating}
                             onClick={event => sendMovieReview(event)}
-                            className='disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#fa6ece] bg-[#fa6ece] rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-[#fa6ece]'
+                            className='disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-helius-orange bg-helius-orange rounded-lg w-24 py-1 font-semibold transition-all duration-200 hover:bg-transparent border-2 border-transparent hover:border-helius-orange'
                         >
                             Submit
                         </button>
