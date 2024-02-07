@@ -120,7 +120,7 @@ const Finished = () => {
             <form onSubmit={event => mintCompressedNft(event)} className='rounded-lg min-h-content bg-[#2a302f] p-4 sm:col-span-6 lg:col-start-2 lg:col-end-6'>
                 <div className='flex justify-between items-center'>
                     <h2 className='text-lg sm:text-2xl font-semibold'>
-                    cNFT Minter 🖼️
+                        cNFT Minter 🖼️
                     </h2>
                     <button
                         type='submit'
@@ -129,7 +129,6 @@ const Finished = () => {
                     >
                         Mint
                     </button>
-
                 </div>
                 
                 <div className='text-sm font-semibold mt-8 bg-[#222524] border-2 border-gray-500 rounded-lg p-2'>

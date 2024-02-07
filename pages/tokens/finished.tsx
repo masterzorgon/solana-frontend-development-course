@@ -26,47 +26,7 @@ const Finished = () => {
         } else { return false; }
     };
 
-    const createAccount = async (event: { preventDefault: () => void }) => {
-        event.preventDefault();
-
-        if (connectionErr()) { return; }
-
-        try {
-            // Token Accounts are accounts which hold tokens of a given mint.
-            const tokenAccount = web3.Keypair.generate();
-            const space = token.ACCOUNT_SIZE;
-            // amount of SOL required for the account to not be deallocated
-            const lamports = await connection.getMinimumBalanceForRentExemption(space);
-            const programId = token.TOKEN_PROGRAM_ID;
-
-            const transaction = new web3.Transaction().add(
-                // creates a new account
-                web3.SystemProgram.createAccount({
-                    fromPubkey: publicKey!,
-                    newAccountPubkey: tokenAccount.publicKey,
-                    space,
-                    lamports,
-                    programId
-                }),
-                // initializes the new account as a Token Account account
-                token.createInitializeAccountInstruction(
-                    tokenAccount.publicKey, // account to initialize
-                    mintAddr!, // token mint address
-                    publicKey!, // owner of new account
-                    token.TOKEN_PROGRAM_ID // spl token program account
-                )   
-            );
-
-            // prompts the user to sign the transaction and submit it to the network
-            const signature = await sendTransaction(transaction, connection, { signers: [tokenAccount] });
-            setAccTx(signature);
-            setAccAddr(tokenAccount.publicKey);
-        } catch (err) {
-            toast.error("Error creating Token Account");
-            console.log('error', err);
-        }
-    };
-
+    // create transaction to create a token mint on the blockchain
     const createMint = async (event: { preventDefault: () => void; }) => {
         // prevents page from refreshing
         event.preventDefault();
@@ -105,6 +65,48 @@ const Finished = () => {
             setMintAddr(tokenMint.publicKey);
         } catch (err) {
             toast.error('Error creating Token Mint');
+            console.log('error', err);
+        }
+    };
+
+    // create transaction to create a token account fo the mint we created on the blockchain
+    const createAccount = async (event: { preventDefault: () => void }) => {
+        event.preventDefault();
+
+        if (connectionErr()) { return; }
+
+        try {
+            // Token Accounts are accounts which hold tokens of a given mint.
+            const tokenAccount = web3.Keypair.generate();
+            const space = token.ACCOUNT_SIZE;
+            // amount of SOL required for the account to not be deallocated
+            const lamports = await connection.getMinimumBalanceForRentExemption(space);
+            const programId = token.TOKEN_PROGRAM_ID;
+
+            const transaction = new web3.Transaction().add(
+                // creates a new account
+                web3.SystemProgram.createAccount({
+                    fromPubkey: publicKey!,
+                    newAccountPubkey: tokenAccount.publicKey,
+                    space,
+                    lamports,
+                    programId
+                }),
+                // initializes the new account as a Token Account account
+                token.createInitializeAccountInstruction(
+                    tokenAccount.publicKey, // account to initialize
+                    mintAddr!, // token mint address
+                    publicKey!, // owner of new account
+                    token.TOKEN_PROGRAM_ID // spl token program account
+                )   
+            );
+
+            // prompts the user to sign the transaction and submit it to the network
+            const signature = await sendTransaction(transaction, connection, { signers: [tokenAccount] });
+            setAccTx(signature);
+            setAccAddr(tokenAccount.publicKey);
+        } catch (err) {
+            toast.error("Error creating Token Account");
             console.log('error', err);
         }
     };
