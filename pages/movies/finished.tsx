@@ -7,10 +7,10 @@ import { ExternalLinkIcon } from '@heroicons/react/outline';
 
 const Finished = () => {
 
-    const [rating, setRating] = React.useState<number | null>(null);
-    const [description, setDescription] = React.useState<string | null>(null);
-    const [title, setTitle] = React.useState<string | null>(null);
-    const [txSig, setTxSig] = React.useState<string>('');
+    const [rating, setRating] = React.useState<number>(0);
+    const [description, setDescription] = React.useState<string>("");
+    const [title, setTitle] = React.useState<string>("");
+    const [txSig, setTxSig] = React.useState<string>("");
 
     const programId = new web3.PublicKey('GWenWxNqXEEM4Cue4jRoYrGuyGb3FTAGu4fZGSwpMU5P');
 
@@ -82,13 +82,9 @@ const Finished = () => {
         } catch (error) {
             console.error(error);
         } finally {
-            setDescription(null);
-            setRating(null);
-            setTitle(null);
-
-            (document.getElementById('title') as HTMLInputElement).value = '';
-            (document.getElementById('description') as HTMLInputElement).value = '';
-            (document.getElementById('rating') as HTMLInputElement).value = '';
+            setDescription("");
+            setRating(0);
+            setTitle("");
         }
     };
 
@@ -126,6 +122,7 @@ const Finished = () => {
                             placeholder='Movie title'
                             className='text-[#9e80ff] py-1 w-full bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
                             onChange={event => setTitle(event.target.value)}
+                            value={title}
                         />
                     </div>
                     <div className='mt-6'>
@@ -138,6 +135,7 @@ const Finished = () => {
                             placeholder='Movie description'
                             className='text-[#9e80ff] py-1 w-full bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
                             onChange={event => setDescription(event.target.value)}
+                            value={description}
                         />
                     </div>
                     <div className='mt-6'>
@@ -152,6 +150,7 @@ const Finished = () => {
                             placeholder='Movie rating'
                             className='text-[#9e80ff] py-1 w-full bg-transparent outline-none resize-none border-2 border-transparent border-b-white'
                             onChange={event => setRating(parseInt(event.target.value))}
+                            value={rating}
                         />
                     </div>
                     <div className='text-sm font-semibold mt-8 bg-[#222524] border-2 border-gray-500 rounded-lg p-2'>
