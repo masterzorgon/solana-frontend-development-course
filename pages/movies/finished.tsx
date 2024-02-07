@@ -38,12 +38,13 @@ const Finished = () => {
             throw 'Please connect your wallet';
         };
 
-        // create a buffer to store user input
+        // create a buffer to store user input | note: a solana account can store up to 10MB (10,485,760 bytes)
         let buffer = Buffer.alloc(1000);
 
         // create unique movie title
         const movieTitle = `${title} - (${(Math.random() * 1000000).toString().slice(0, 4)})`;
 
+        // encodes the provided data into a binary format according to the movieInstructionLayout's schema and writes the encoded data into the buffer.
         movieInstructionLayout.encode({
             variant: 0,
             title: movieTitle,
@@ -51,7 +52,8 @@ const Finished = () => {
             description: description
         }, buffer);
 
-        // insert user's input into the buffer we created
+
+        // adjust the buffer size in case our data has any unused space (to avoid paying hire rent / bloating blockchain space)
         buffer = buffer.slice(0, movieInstructionLayout.getSpan(buffer));
 
         // derive the address of the account we will store this info in on-chain
