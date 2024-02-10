@@ -52,7 +52,6 @@ const Finished = () => {
             description: description
         }, buffer);
 
-
         // adjust the buffer size in case our data has any unused space (to avoid paying hire rent / bloating blockchain space)
         buffer = buffer.slice(0, movieReviewLayout.getSpan(buffer));
 
@@ -95,6 +94,7 @@ const Finished = () => {
         try { // send transaction to blockchain
             const signature = await sendTransaction(transaction, connection);
             setTxSig(signature);
+            toast.success("Movie review sent to blockchain!")
             console.log(`https://explorer.solana.com/tx/${signature}?cluster=devnet`);
         } catch (error) { // throw error messages if request fails
             console.error(error);
@@ -130,6 +130,7 @@ const Finished = () => {
                             Submit
                         </button>
                     </div>
+
                     <div className='mt-6'>
                         <h3 className='italic text-sm'>
                             What is the name of the movie?
@@ -143,6 +144,7 @@ const Finished = () => {
                             value={title}
                         />
                     </div>
+
                     <div className='mt-6'>
                         <h3 className='italic text-sm'>
                             A brief description of the movie?
@@ -156,6 +158,7 @@ const Finished = () => {
                             value={description}
                         />
                     </div>
+                    
                     <div className='mt-6'>
                         <h3 className='italic text-sm'>
                             What is the movie rating?

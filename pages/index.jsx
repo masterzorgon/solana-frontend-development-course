@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Requirements from '../components/Requirements';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../projects/projects';
