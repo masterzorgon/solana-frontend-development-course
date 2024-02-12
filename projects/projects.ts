@@ -67,7 +67,7 @@ export const projects: Project[] = [
         }
     },
     {
-        title: 'viewer',
+        title: 'transaction viewer',
         description: 'You will use the Helius transaction parser API to view the transaction history of your wallet.',
         href: {
             finished: '/viewer/finished',
