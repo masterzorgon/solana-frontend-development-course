@@ -4,7 +4,8 @@ import { toast } from "react-toastify";
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { DocumentTextIcon, CubeTransparentIcon } from '@heroicons/react/outline';
 
-const HELIUS_API_KEY = "70bb6c34-bb1b-4776-8851-f8a18d12b9eb";
+// although it's better practice to import your API key as an environment variable, i've instantiated the API key as a constant variable for demo purposes
+const HELIUS_API_KEY = "<YOUR HELIUS API KEY>";
 
 const Finished = () => {
     // react state variables
