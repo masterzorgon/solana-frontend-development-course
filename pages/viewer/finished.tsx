@@ -49,7 +49,6 @@ const Finished = () => {
         setParseHistoryUrl(`https://api.helius.xyz/v0/addresses/${publicKey}/transactions?api-key=${HELIUS_API_KEY}`)
     }, [connection, publicKey]);
 
-    
     return (
         <main className="max-w-7xl grid grid-cols-1 sm:grid-cols-6 gap-4 p-4 text-white">
             <TransactionDetails 
@@ -69,6 +68,7 @@ const Finished = () => {
                         Call Transactions
                     </button>
                 </div>
+
                 {listOfTxs.length > 0 && <div className='text-sm font-semibold mt-8 bg-[#222524] border-2 border-gray-500 rounded-lg p-2'>
                     <ul className='p-2'>
                         {listOfTxs.map(({ signature }, index) => (
@@ -94,7 +94,7 @@ type TransactionDetailsProps = {
     transactionDetails: any; // Consider defining a more specific type
     displayDetails: boolean;
     setDisplayDetails: (displayDetails: boolean) => void; // Adjust as needed
-  };
+};
 
 const TransactionDetails: React.FC<TransactionDetailsProps> = ({
     transactionDetails,
